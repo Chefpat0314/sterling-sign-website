@@ -1,0 +1,11 @@
+# dependencies & builds
+node_modules/
+.next/
+out/
+dist/
+# env & logs
+.env
+.env.*
+*.log
+# OS cruft
+.DS_Store

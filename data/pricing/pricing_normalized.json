@@ -1,0 +1,39 @@
+"banners_13oz": {
+  "slug": "banners_13oz",
+  "name": "13oz Vinyl Banner",
+  "base_price_per_sqft": 5,
+  "quantity_tiers": [1, 5, 10, 25],
+  "options": [
+    {
+      "key": "hems",
+      "type": "bool",
+      "label": "Hems",
+      "add": 0.5
+    },
+    {
+      "key": "grommets",
+      "type": "enum",
+      "label": "Grommets",
+      "choices": [
+        { "value": "none", "add": 0 },
+        { "value": "every_2ft", "add": 0.5 },
+        { "value": "perimeter", "add": 0.8 }
+      ]
+    },
+    {
+      "key": "pole_pockets",
+      "type": "enum",
+      "label": "Pole Pocket",
+      "choices": [
+        { "value": "none",             "label": "No Pole Pockets",        "add": 0 },
+        { "value": "2in_top_bottom",   "label": "2\" - Top and Bottom",    "add": 1.0 },
+        { "value": "3in_top_bottom",   "label": "3\" - Top and Bottom",    "add": 1.5 },
+        { "value": "4in_top_bottom",   "label": "4\" - Top and Bottom",    "add": 2.0 },
+        { "value": "2in_top_only",     "label": "2\" - Top Only",          "add": 0.6 },
+        { "value": "3in_top_only",     "label": "3\" - Top Only",          "add": 0.9 },
+        { "value": "4in_top_only",     "label": "4\" - Top Only",          "add": 1.2 },
+        { "value": "custom",           "label": "Custom Pole Pocket",      "add": 1.2 }
+      ]
+    }
+  ]
+}
