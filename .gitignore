@@ -1,11 +1,21 @@
-# dependencies & builds
+﻿# dependencies
 node_modules/
+
+# next
 .next/
 out/
-dist/
-# env & logs
+.next-static/
+.vercel/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env / secrets
 .env
 .env.*
-*.log
-# OS cruft
-.DS_Store
+!.env.example
+
+# uploads (if these are generated)
+uploads/

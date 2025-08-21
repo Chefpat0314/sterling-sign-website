@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import IndustriesWeServe from '../components/IndustriesWeServe';
 import ServicesWeOffer from '../components/ServicesWeOffer';
 
@@ -11,22 +10,18 @@ function HeroVideoSection() {
         loop
         muted
         playsInline
-        preload="metadata"
-        poster="/images/hero_placeholder.png"
         className="absolute inset-0 w-full h-full object-cover opacity-60 z-0"
+        poster="/hero_placeholder.png"
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-        <Image
-          src="/images/sterling_logo.png"  // <- this file exists in public/images
+        {/* Use the root logo.png file */}
+        <img
+          src="/logo.png"
           alt="Sterling Sign Solutions"
-          width={384}                      // ~Tailwind w-96
-          height={120}
-          className="mb-6"
-          priority
+          className="w-64 md:w-96 mb-6"
         />
         <h1 className="text-4xl md:text-6xl font-bold drop-shadow-lg">
           California’s Trusted Sign Partner
