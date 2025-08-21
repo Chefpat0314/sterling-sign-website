@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import IndustriesWeServe from '../components/IndustriesWeServe';
 import ServicesWeOffer from '../components/ServicesWeOffer';
 
@@ -10,13 +11,23 @@ function HeroVideoSection() {
         loop
         muted
         playsInline
+        preload="metadata"
+        poster="/images/hero_placeholder.png"
         className="absolute inset-0 w-full h-full object-cover opacity-60 z-0"
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
       </video>
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-        <img src="/images/logo.svg" alt="Sterling Sign Solutions" className="w-64 md:w-96 mb-6" />
+        <Image
+          src="/images/sterling_logo.png"  // <- this file exists in public/images
+          alt="Sterling Sign Solutions"
+          width={384}                      // ~Tailwind w-96
+          height={120}
+          className="mb-6"
+          priority
+        />
         <h1 className="text-4xl md:text-6xl font-bold drop-shadow-lg">
           California’s Trusted Sign Partner
         </h1>
@@ -38,6 +49,7 @@ export default function Home() {
           content="Licensed California sign partner for construction, property management, healthcare, education, and logistics. Fast quotes, pro installs, clean execution."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         {/* Favicon set */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -45,6 +57,7 @@ export default function Home() {
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#0b0f19" />
+
         {/* Social cards */}
         <meta property="og:title" content="Sterling Sign Solutions" />
         <meta property="og:description" content="Built for builders. Engineered for speed." />
