@@ -1,45 +1,43 @@
+// components/Layout.js
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-export default function Layout({
-  title = 'Sterling Sign Solutions',
-  description = 'High-quality custom signage — design, fabrication, installation, and maintenance for businesses across industries.',
-  children,
-}) {
+export default function Layout({ title = 'Sterling Sign Solutions', description = 'High-quality custom signage — design, fabrication, installation, and maintenance for businesses across industries.', children }) {
   const router = useRouter();
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-  const url = `${baseUrl}${router.asPath === '/' ? '' : router.asPath}`;
-  const ogImage = `${baseUrl}/og-image.png`;
-  const siteName = 'Sterling Sign Solutions';
+
+  // Use env var in prod, fall back to current origin in browser, and localhost during SSR dev
+  const origin =
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000');
+
+  const path = router.asPath?.split('?')[0] || '/';
+  const url = `${origin}${path}`;
+  const ogImage = `${origin}/og-image.png`;
 
   return (
     <>
       <Head>
         <title>{title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content={description} />
+        {description && <meta name="description" content={description} />}
 
-        {/* Favicon */}
-        <link rel="icon" href="/favicon.png" />
-
-        {/* Canonical */}
+        {/* Canonical + OG/Twitter */}
         <link rel="canonical" href={url} />
-
-        {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content={siteName} />
+        <meta property="og:site_name" content="Sterling Sign Solutions" />
         <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
+        {description && <meta property="og:description" content={description} />}
         <meta property="og:url" content={url} />
         <meta property="og:image" content={ogImage} />
         <meta property="og:image:alt" content="Sterling Sign Solutions" />
-
-        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
+        {description && <meta name="twitter:description" content={description} />}
         <meta name="twitter:image" content={ogImage} />
+
+        {/* Preloads */}
+        <link rel="preload" as="image" href="/images/logo.png" />
       </Head>
 
       <header className="border-b">
