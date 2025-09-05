@@ -1,0 +1,4 @@
+[
+  { "name": "Sample Product A", "slug": "sample-product-a", "basePrice": 9.99 },
+  { "name": "Sample Product B", "sku": "SPB-001", "basePrice": 14.5 }
+]
