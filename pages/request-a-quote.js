@@ -8,12 +8,16 @@ const HUBSPOT_PORTAL_ID = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID;
 const HUBSPOT_FORM_ID = process.env.NEXT_PUBLIC_HUBSPOT_FORM_ID;
 
 const PRODUCT_LABELS = {
+  'vinyl-banner': 'Vinyl Banners',
+  'aluminum-sign': 'Aluminum Signs',
+  'door-hours-decal': 'Door Hours Decals',
   '13oz-vinyl-banner': '13oz Vinyl Banner',
   'aluminum-sign': 'Aluminum Sign',
   'door-hours-vinyl': 'Door Hours Decal',
   banners_13oz: '13oz Vinyl Banner',
   aluminum_040: '.040 Aluminum Sign',
   door_hours_cut_vinyl: 'Door Hours (Cut Vinyl)',
+  custom: 'Custom Signage Solution',
 };
 
 function loadScriptOnce(src) {
@@ -109,7 +113,12 @@ export default function RequestQuotePage() {
 
   const selectedSlug =
     typeof router.query.product === 'string' ? router.query.product : undefined;
+  const selectedService = typeof router.query.service === 'string' ? router.query.service : undefined;
+  const selectedIndustry = typeof router.query.industry === 'string' ? router.query.industry : undefined;
+  
   const selectedName = selectedSlug ? (PRODUCT_LABELS[selectedSlug] || selectedSlug) : '';
+  const selectedServiceName = selectedService ? selectedService.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase()) : '';
+  const selectedIndustryName = selectedIndustry ? selectedIndustry.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase()) : '';
 
   useEffect(() => {
     if (!hasHubspotConfig || formMounted.current) return;
@@ -152,19 +161,47 @@ export default function RequestQuotePage() {
       <div className="max-w-3xl mx-auto py-10 px-4">
         <h1 className="text-3xl font-bold">Request a Quote</h1>
 
-        {selectedName && (
-          <div className="mt-2">
-            <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-sm text-blue-700">
-              Selected: <strong className="font-semibold">{selectedName}</strong>
-              <button
-                type="button"
-                aria-label="Clear selected product"
-                className="ml-1 rounded-full px-2 leading-none hover:bg-blue-100"
-                onClick={() => router.push('/request-a-quote')}
-              >
-                ×
-              </button>
-            </span>
+        {(selectedName || selectedServiceName || selectedIndustryName) && (
+          <div className="mt-2 space-y-2">
+            {selectedName && (
+              <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-sm text-blue-700">
+                Product: <strong className="font-semibold">{selectedName}</strong>
+                <button
+                  type="button"
+                  aria-label="Clear selected product"
+                  className="ml-1 rounded-full px-2 leading-none hover:bg-blue-100"
+                  onClick={() => router.push('/request-a-quote')}
+                >
+                  ×
+                </button>
+              </span>
+            )}
+            {selectedServiceName && (
+              <span className="inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-3 py-1 text-sm text-green-700">
+                Service: <strong className="font-semibold">{selectedServiceName}</strong>
+                <button
+                  type="button"
+                  aria-label="Clear selected service"
+                  className="ml-1 rounded-full px-2 leading-none hover:bg-green-100"
+                  onClick={() => router.push('/request-a-quote')}
+                >
+                  ×
+                </button>
+              </span>
+            )}
+            {selectedIndustryName && (
+              <span className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-purple-50 px-3 py-1 text-sm text-purple-700">
+                Industry: <strong className="font-semibold">{selectedIndustryName}</strong>
+                <button
+                  type="button"
+                  aria-label="Clear selected industry"
+                  className="ml-1 rounded-full px-2 leading-none hover:bg-purple-100"
+                  onClick={() => router.push('/request-a-quote')}
+                >
+                  ×
+                </button>
+              </span>
+            )}
           </div>
         )}
 
