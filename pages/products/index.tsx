@@ -112,6 +112,7 @@ export default function ProductsPage() {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [sortBy, setSortBy] = useState<string>('popular');
   const [zipCode, setZipCode] = useState<string>('');
+  const [etaResults, setEtaResults] = useState<Record<string, any>>({});
 
   useEffect(() => {
     const productList = generateProducts();
@@ -119,6 +120,25 @@ export default function ProductsPage() {
     setFilteredProducts(productList);
     analytics.viewCategory('products');
   }, []);
+
+  // Calculate ETAs when zip code changes
+  useEffect(() => {
+    if (zipCode && zipCode.length === 5) {
+      const calculateETAs = async () => {
+        const results: Record<string, any> = {};
+        for (const product of products) {
+          try {
+            const eta = await getETA(product.id, zipCode);
+            results[product.id] = eta;
+          } catch (error) {
+            console.error('ETA calculation error:', error);
+          }
+        }
+        setEtaResults(results);
+      };
+      calculateETAs();
+    }
+  }, [zipCode, products]);
 
   useEffect(() => {
     let filtered = [...products];
@@ -338,10 +358,10 @@ export default function ProductsPage() {
                     </div>
 
                     {/* Delivery Info */}
-                    {zipCode && zipCode.length === 5 && (
+                    {zipCode && zipCode.length === 5 && etaResults[product.id] && (
                       <div className="mb-4 p-3 bg-blue-50 rounded-lg">
                         <div className="text-sm text-blue-800">
-                          <span className="font-medium">Delivered by:</span> {formatETA(await getETA(product.id, zipCode))}
+                          <span className="font-medium">Delivered by:</span> {formatETA(etaResults[product.id])}
                         </div>
                       </div>
                     )}
