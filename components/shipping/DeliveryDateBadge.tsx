@@ -1,7 +1,8 @@
 // components/shipping/DeliveryDateBadge.tsx - Delivery date display with tooltip
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { buildDeliveryOptions, type ShippingInput } from '../../lib/eta';
+import { buildDeliveryOptions } from '../../lib/eta';
+import { type ShippingInput } from '../../config/shipping';
 import { formatETA } from '../../lib/eta';
 import { analytics } from '../../lib/metrics';
 

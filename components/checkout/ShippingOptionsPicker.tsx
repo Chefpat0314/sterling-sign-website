@@ -1,7 +1,8 @@
 // components/checkout/ShippingOptionsPicker.tsx - Shipping method selection
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { buildDeliveryOptions, type ShippingInput, type DeliveryOption } from '../../lib/eta';
+import { buildDeliveryOptions } from '../../lib/eta';
+import { type ShippingInput, type DeliveryOption } from '../../config/shipping';
 import { analytics } from '../../lib/metrics';
 import { formatCurrency } from '../../lib/format';
 
