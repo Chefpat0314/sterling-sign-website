@@ -58,10 +58,6 @@
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   
-  /* Soft Shadows for Cards */
-  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-soft-lg: 0 4px 16px rgba(0, 0, 0, 0.08);
-  
   /* Typography */
   --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
@@ -110,11 +106,11 @@
 
 /* Custom Component Classes */
 .card {
-  @apply bg-white rounded-2xl shadow-soft border border-gray-100;
+  @apply bg-white rounded-2xl shadow-md border border-gray-100;
 }
 
 .card-elevated {
-  @apply bg-white rounded-2xl shadow-soft-lg border border-gray-200;
+  @apply bg-white rounded-2xl shadow-lg border border-gray-200;
 }
 
 .btn-primary {
