@@ -3,7 +3,6 @@ import Link from 'next/link';
 import IndustriesWeServe from '../components/IndustriesWeServe';
 import ServicesWeOffer from '../components/ServicesWeOffer';
 import WhySterling from '../components/WhySterling';
-import '../styles/buttons.css';
 
 function HeroVideoSection() {
   return (
