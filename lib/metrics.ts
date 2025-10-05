@@ -147,6 +147,12 @@ class Analytics {
     });
   }
 
+  viewCategory(category: string): void {
+    this.track('view_category', {
+      meta: { category }
+    });
+  }
+
   viewProduct(productId: string, category?: string): void {
     this.track('view_product', {
       product: productId,
