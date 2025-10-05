@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 /**
  * Navbar component renders the primary navigation across the site. It
@@ -9,6 +10,13 @@ import Image from 'next/image';
  * existing layout and styling conventions.
  */
 export default function Navbar() {
+  const router = useRouter();
+  
+  const isActive = (path: string) => {
+    if (path === '/') return router.pathname === '/';
+    return router.pathname.startsWith(path);
+  };
+
   return (
     <nav className="sticky top-0 z-50 flex items-center justify-between py-4 px-8 bg-white/95 backdrop-blur-sm shadow-md border-b border-gray-100">
       {/* Logo */}
@@ -24,16 +32,44 @@ export default function Navbar() {
 
       {/* Navigation Links */}
       <div className="flex items-center space-x-6">
-        <Link href="/products" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+        <Link 
+          href="/products" 
+          className={`font-medium transition-colors ${
+            isActive('/products') 
+              ? 'text-blue-600 border-b-2 border-blue-600 pb-1' 
+              : 'text-gray-700 hover:text-blue-600'
+          }`}
+        >
           Products
         </Link>
-        <Link href="/industries" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+        <Link 
+          href="/industries" 
+          className={`font-medium transition-colors ${
+            isActive('/industries') 
+              ? 'text-blue-600 border-b-2 border-blue-600 pb-1' 
+              : 'text-gray-700 hover:text-blue-600'
+          }`}
+        >
           Industries
         </Link>
-        <Link href="/services" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+        <Link 
+          href="/services" 
+          className={`font-medium transition-colors ${
+            isActive('/services') 
+              ? 'text-blue-600 border-b-2 border-blue-600 pb-1' 
+              : 'text-gray-700 hover:text-blue-600'
+          }`}
+        >
           Services
         </Link>
-        <Link href="/about" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+        <Link 
+          href="/about" 
+          className={`font-medium transition-colors ${
+            isActive('/about') 
+              ? 'text-blue-600 border-b-2 border-blue-600 pb-1' 
+              : 'text-gray-700 hover:text-blue-600'
+          }`}
+        >
           About
         </Link>
         <Link 

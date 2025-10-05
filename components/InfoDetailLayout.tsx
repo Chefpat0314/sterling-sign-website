@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import { trackCTAClick } from '../lib/analytics';
 
 interface InfoDetailLayoutProps {
   // Common fields for both services and industries
@@ -72,15 +73,21 @@ export default function InfoDetailLayout({
       </Head>
 
       {/* Breadcrumb Navigation */}
-      <nav className="bg-gray-50 border-b">
+      <nav className="bg-gray-50 border-b" aria-label="Breadcrumb">
         <div className="max-w-6xl mx-auto px-4 py-3">
-          <div className="text-sm text-gray-600">
-            <Link href={backLinkHref} className="hover:text-blue-600 transition-colors">
-              {breadcrumbLabel}
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-gray-900 font-medium">{name}</span>
-          </div>
+          <ol className="flex items-center space-x-2 text-sm text-gray-600" role="list">
+            <li>
+              <Link href={backLinkHref} className="hover:text-blue-600 transition-colors" aria-label={`Back to ${breadcrumbLabel}`}>
+                {breadcrumbLabel}
+              </Link>
+            </li>
+            <li className="flex items-center">
+              <svg className="w-4 h-4 mx-2 text-gray-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+              </svg>
+              <span className="text-gray-900 font-medium" aria-current="page">{name}</span>
+            </li>
+          </ol>
         </div>
       </nav>
 
@@ -112,6 +119,7 @@ export default function InfoDetailLayout({
               href={ctaHref}
               className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg"
               aria-label={`${ctaLabel} for ${name}`}
+              onClick={() => trackCTAClick(`${type}_hero`, slug)}
             >
               {ctaLabel}
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -251,6 +259,7 @@ export default function InfoDetailLayout({
                   <Link
                     href={ctaHref}
                     className="block w-full text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                    onClick={() => trackCTAClick(`${type}_sidebar`, slug)}
                   >
                     {ctaLabel}
                   </Link>

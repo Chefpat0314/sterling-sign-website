@@ -18,8 +18,11 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@playwright/test": "^1.55.1",
     "@types/node": "24.1.0",
     "@types/react": "19.1.8",
+    "playwright": "^1.55.1",
+    "tsx": "^4.20.6",
     "typescript": "5.8.3"
   }
 }
