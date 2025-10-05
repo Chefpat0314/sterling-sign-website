@@ -17,6 +17,11 @@ export default function Layout({ title = 'Sterling Sign Solutions', description 
 
   return (
     <>
+      {/* Skip link for keyboard users */}
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+      
       <Head>
         <title>{title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -60,7 +65,7 @@ export default function Layout({ title = 'Sterling Sign Solutions', description 
         </div>
       </header>
 
-      <main className="min-h-screen">{children}</main>
+      <main id="main-content" className="min-h-screen">{children}</main>
 
       <footer className="border-t">
         <div className="max-w-7xl mx-auto px-4 py-6 text-sm text-gray-600">
