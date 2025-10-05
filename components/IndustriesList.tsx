@@ -76,7 +76,7 @@ const industries: Industry[] = [
 export default function IndustriesList() {
   return (
     <section
-      className="bg-gradient-to-br from-slate-100 via-white to-sky-100 py-16"
+      className="bg-gradient-to-br from-slate-100 via-white to-blue-100 py-16"
       aria-label="Industries We Serve"
     >
       <div className="max-w-7xl mx-auto px-4">

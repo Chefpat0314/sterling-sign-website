@@ -70,7 +70,7 @@ const services: Service[] = [
 export default function ServicesWeOffer() {
   return (
     <section
-      className="bg-gradient-to-br from-sky-100 via-white to-slate-100 py-16"
+      className="bg-gradient-to-br from-blue-100 via-white to-slate-100 py-16"
       aria-label="Our Services"
     >
       <div className="max-w-7xl mx-auto px-4">
