@@ -56,18 +56,23 @@ const industries = [
 export default function IndustriesWeServe() {
   return (
     <section
-      className="bg-gradient-to-br from-slate-100 via-white to-sky-100 py-16"
+      className="bg-white py-20"
       aria-label="Industries We Serve"
     >
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-gray-900 mb-2 text-center">
-          Industries We Serve
-        </h2>
-        <p className="text-lg text-gray-700 mb-10 text-center max-w-2xl mx-auto">
-          From construction to hospitality, Sterling Sign Solutions has
-          expertise across a broad range of industries. Browse the cards below
-          to discover how we can elevate your space.
-        </p>
+        {/* Modern section header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-6">
+            <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+            Industries We Serve
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Who Are You?
+          </h2>
+          <p className="text-xl text-gray-600 mb-4 max-w-3xl mx-auto leading-relaxed">
+            We tailor our approach to your industry's unique needs.
+          </p>
+        </div>
         <div
           className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
           role="list"
@@ -76,7 +81,7 @@ export default function IndustriesWeServe() {
             <motion.article
               key={industry.key}
               role="listitem"
-              className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl group hover:scale-[1.03] transition-transform duration-300"
+              className="group relative h-[400px] rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
@@ -103,18 +108,21 @@ export default function IndustriesWeServe() {
                   />
                 </picture>
               )}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex flex-col justify-end p-6 text-white z-10">
-                <h3 className="text-2xl font-semibold drop-shadow-md mb-2">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-6 text-white z-10">
+                <h3 className="text-2xl font-bold mb-2 drop-shadow-lg">
                   {industry.title}
                 </h3>
-                <p className="text-sm drop-shadow-md mb-4">
+                <p className="text-sm mb-4 drop-shadow-md opacity-90">
                   {industry.secondary}
                 </p>
                 <a
                   href={`/industries/${industry.key}?industry=${industry.key}&source=industry_card_${industry.key}`}
-                  className="inline-block bg-amber-400 text-black px-4 py-2 rounded-lg font-semibold hover:bg-amber-500 hover:text-white hover:scale-105 transition duration-200"
+                  className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
                 >
                   {industry.cta}
+                  <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </a>
               </div>
             </motion.article>

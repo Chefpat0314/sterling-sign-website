@@ -7,15 +7,6 @@ const HUBSPOT_REGION = process.env.NEXT_PUBLIC_HUBSPOT_REGION;
 const HUBSPOT_PORTAL_ID = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID;
 const HUBSPOT_FORM_ID = process.env.NEXT_PUBLIC_HUBSPOT_FORM_ID;
 
-const PRODUCT_LABELS = {
-  '13oz-vinyl-banner': '13oz Vinyl Banner',
-  'aluminum-sign': 'Aluminum Sign',
-  'door-hours-vinyl': 'Door Hours Decal',
-  banners_13oz: '13oz Vinyl Banner',
-  aluminum_040: '.040 Aluminum Sign',
-  door_hours_cut_vinyl: 'Door Hours (Cut Vinyl)',
-};
-
 function loadScriptOnce(src) {
   if (document.querySelector(`script[src="${src}"]`)) return Promise.resolve();
   return new Promise((resolve, reject) => {
@@ -61,15 +52,11 @@ function createHubspotForm(targetSelector) {
   console.log("Provider selected: hubspot");
 }
 
-export default function RequestQuotePage() {
+export default function RequestAQuotePage() {
   const router = useRouter();
   const formMounted = useRef(false);
   const hasHubspotConfig =
     !!HUBSPOT_REGION && !!HUBSPOT_PORTAL_ID && !!HUBSPOT_FORM_ID;
-
-  const selectedSlug =
-    typeof router.query.product === 'string' ? router.query.product : undefined;
-  const selectedName = selectedSlug ? (PRODUCT_LABELS[selectedSlug] || selectedSlug) : '';
 
   useEffect(() => {
     if (!hasHubspotConfig || formMounted.current) return;
@@ -99,41 +86,9 @@ export default function RequestQuotePage() {
   }
 
   return (
-    <>
-      <Head>
-        <title>Request a Quote – Sterling Sign Solutions</title>
-        <meta
-          name="description"
-          content="Tell us about your project and we'll follow up with pricing and next steps."
-        />
-        <link rel="canonical" href="http://localhost:3000/request-a-quote" />
-      </Head>
-
-      <div className="max-w-3xl mx-auto py-10 px-4">
-        <h1 className="text-3xl font-bold">Request a Quote</h1>
-
-        {selectedName && (
-          <div className="mt-2">
-            <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-sm text-blue-700">
-              Selected: <strong className="font-semibold">{selectedName}</strong>
-              <button
-                type="button"
-                aria-label="Clear selected product"
-                className="ml-1 rounded-full px-2 leading-none hover:bg-blue-100"
-                onClick={() => router.push('/request-a-quote')}
-              >
-                ×
-              </button>
-            </span>
-          </div>
-        )}
-
-        <p className="mt-6 text-gray-600">
-          Share a few details and our team will reach out with pricing and next steps.
-        </p>
-
-        <div id="hubspot-form" className="mt-6" />
-      </div>
-    </>
+    <div className="mx-auto max-w-2xl p-6">
+      <h1 className="text-2xl font-semibold mb-4">Request a Quote</h1>
+      <div id="hubspot-form" />
+    </div>
   );
 }

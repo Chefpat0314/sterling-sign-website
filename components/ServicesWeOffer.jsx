@@ -57,41 +57,67 @@ const services = [
 export default function ServicesWeOffer() {
   return (
     <section
-      className="bg-gradient-to-br from-sky-100 via-white to-slate-100 py-16"
+      className="bg-gray-50 py-20"
       aria-label="Our Services"
     >
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-gray-900 mb-2 text-center">
-          Our Services
-        </h2>
-        <p className="text-lg text-gray-700 mb-10 text-center max-w-2xl mx-auto">
-          We offer a full suite of services to bring your signage vision to life.
-        </p>
+        {/* Modern section header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-6">
+            <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+            Full-Service Solutions
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            What We Do
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            From initial concept to final installation, we provide comprehensive signage solutions that deliver results.
+          </p>
+          
+          {/* Value proposition highlight */}
+          <div className="mt-8 inline-flex items-center px-6 py-3 bg-blue-50 border border-blue-200 rounded-xl">
+            <span className="text-blue-700 font-semibold">
+              High-Quality Materials = Lower Long-Term Costs
+            </span>
+          </div>
+          <p className="mt-2 text-sm text-gray-600">
+            Clients reduce signage replacement costs by 30% over standard vendors — saving thousands over project lifetimes.
+          </p>
+        </div>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" role="list">
           {services.map((svc, i) => (
             <motion.article
               key={svc.key}
               role="listitem"
-              className="relative h-[400px] rounded-2xl overflow-hidden bg-gray-200 shadow-2xl group hover:scale-[1.03] transition-transform duration-300"
+              className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
               viewport={{ once: true }}
             >
-              {/* Placeholder background – replace with <picture> or <video> later */}
-              <div className="absolute inset-0 bg-gray-200" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex flex-col justify-end p-6 text-white z-10">
-                <h3 className="text-2xl font-semibold drop-shadow-md mb-2">
+              {/* Service icon */}
+              <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors duration-200">
+                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              
+              {/* Service content */}
+              <div className="flex flex-col h-full">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   {svc.title}
                 </h3>
-                <p className="text-sm drop-shadow-md mb-4">
+                <p className="text-gray-600 mb-6 flex-grow leading-relaxed">
                   {svc.description}
                 </p>
                 <a
                   href={`${svc.link}&source=service_card_${svc.key}`}
-                  className="inline-block bg-amber-400 text-black px-4 py-2 rounded-lg font-semibold hover:bg-amber-500 hover:text-white hover:scale-105 transition duration-200"
+                  className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
                 >
                   {svc.cta}
+                  <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </a>
               </div>
             </motion.article>
