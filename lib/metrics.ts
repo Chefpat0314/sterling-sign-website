@@ -9,7 +9,7 @@ const EventSchema = z.object({
   orderId: z.string().optional(),
   product: z.string().optional(),
   ms: z.number().optional(),
-  meta: z.record(z.any()).optional(),
+  meta: z.record(z.string(), z.any()).optional(),
   timestamp: z.number().default(() => Date.now()),
 });
 
@@ -110,18 +110,15 @@ class Analytics {
       ...payload,
     };
 
-    // Validate payload
-    const validatedPayload = EventSchema.parse(fullPayload);
-
     // Send to all providers
     this.providers.forEach(provider => {
-      provider.track(event, validatedPayload);
+      provider.track(event, fullPayload);
     });
 
     // Store in localStorage for debugging
     if (typeof window !== 'undefined') {
       const events = JSON.parse(localStorage.getItem('analytics_events') || '[]');
-      events.push(validatedPayload);
+      events.push(fullPayload);
       localStorage.setItem('analytics_events', JSON.stringify(events.slice(-100))); // Keep last 100
     }
   }
