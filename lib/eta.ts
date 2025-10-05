@@ -1,5 +1,6 @@
-// lib/eta.ts - Delivery ETA calculations
+// lib/eta.ts - Delivery ETA calculations with business day math
 import { z } from 'zod';
+import { SHIPPING_CONFIG, type ShippingInput, type DeliveryOption, type RushLevel } from '../config/shipping';
 
 // ETA Configuration Schema
 const ETAConfigSchema = z.object({
@@ -77,25 +78,52 @@ function getShippingZone(zipCode: string): string {
   return `${zoneStart.toString().padStart(5, '0')}-${zoneEnd.toString().padStart(5, '0')}`;
 }
 
-// Check if date is weekend
-function isWeekend(date: Date): boolean {
+// Business day utilities
+export function isBusinessDay(date: Date): boolean {
   const day = date.getDay();
-  return day === 0 || day === 6; // Sunday or Saturday
+  if (day === 0 || day === 6) return false; // Weekend
+  
+  // Check if it's a holiday
+  const isoDate = date.toISOString().split('T')[0];
+  return !SHIPPING_CONFIG.productionHolidays.includes(isoDate);
 }
 
-// Add business days to date
-function addBusinessDays(date: Date, days: number): Date {
+export function addBusinessDays(date: Date, days: number): Date {
   const result = new Date(date);
   let addedDays = 0;
   
   while (addedDays < days) {
     result.setDate(result.getDate() + 1);
-    if (!isWeekend(result)) {
+    if (isBusinessDay(result)) {
       addedDays++;
     }
   }
   
   return result;
+}
+
+export function nextBusinessDay(date: Date): Date {
+  const nextDay = new Date(date);
+  nextDay.setDate(nextDay.getDate() + 1);
+  
+  while (!isBusinessDay(nextDay)) {
+    nextDay.setDate(nextDay.getDate() + 1);
+  }
+  
+  return nextDay;
+}
+
+export function adjustForHolidays(date: Date): Date {
+  while (!isBusinessDay(date)) {
+    date.setDate(date.getDate() + 1);
+  }
+  return date;
+}
+
+// Check if date is weekend (legacy function)
+function isWeekend(date: Date): boolean {
+  const day = date.getDay();
+  return day === 0 || day === 6; // Sunday or Saturday
 }
 
 // Main ETA calculation function
@@ -242,6 +270,156 @@ export function getRushOptions(productCode: string): Array<{
   ];
 }
 
+// Production day calculations
+export function computeProductionDays(
+  productCode: string,
+  qty: number,
+  areaSqft: number,
+  rushLevel: RushLevel
+): number {
+  const baseDays = SHIPPING_CONFIG.baseProdDaysByProduct[productCode] || 2;
+  
+  // Apply rush reduction
+  let productionDays = baseDays;
+  if (rushLevel === 'rush20' || rushLevel === 'rush40') {
+    const rushConfig = SHIPPING_CONFIG.allowRushByProduct[productCode];
+    if (rushConfig) {
+      productionDays = rushConfig.rushProdDays;
+    }
+  }
+  
+  // Apply bulk adder
+  if (areaSqft > SHIPPING_CONFIG.bulkAdders.areaSqftThreshold || qty > 50) {
+    productionDays += SHIPPING_CONFIG.bulkAdders.addDays;
+  }
+  
+  return productionDays;
+}
+
+// Ship date calculation
+export function computeShipDate(now: Date, cutoff: string, prodDays: number): Date {
+  const [cutoffHour, cutoffMinute] = cutoff.split(':').map(Number);
+  const cutoffTime = new Date(now);
+  cutoffTime.setHours(cutoffHour, cutoffMinute, 0, 0);
+  
+  let productionStart = now;
+  if (now > cutoffTime) {
+    productionStart = nextBusinessDay(now);
+  } else {
+    productionStart = adjustForHolidays(productionStart);
+  }
+  
+  return addBusinessDays(productionStart, prodDays);
+}
+
+// Transit time estimation
+export function estimateTransitDays(
+  method: string,
+  originZip: string,
+  destZip: string,
+  oversize: boolean = false
+): number {
+  if (oversize) {
+    return 7; // Freight transit time
+  }
+  
+  const zone = getShippingZone(destZip);
+  const transitMatrix = SHIPPING_CONFIG.groundTransitMatrix[zone] || 
+    SHIPPING_CONFIG.groundTransitMatrix['50000-59999'];
+  
+  switch (method) {
+    case 'GROUND':
+      return transitMatrix.ground + SHIPPING_CONFIG.buffers.groundDaysPad;
+    case '2DAY':
+      return transitMatrix.twoDay;
+    case 'OVERNIGHT':
+      return transitMatrix.overnight;
+    case 'FREIGHT':
+      return 7;
+    default:
+      return transitMatrix.ground;
+  }
+}
+
+// Delivery date calculation
+export function computeDeliveryDate(
+  shipDate: Date,
+  transitDays: number,
+  method: string
+): Date {
+  if (method === 'GROUND') {
+    // Ground shipping can have a range, return the latest date
+    return addBusinessDays(shipDate, transitDays);
+  } else {
+    // Air shipping is guaranteed
+    return addBusinessDays(shipDate, transitDays);
+  }
+}
+
+// Build delivery options
+export function buildDeliveryOptions(input: ShippingInput): DeliveryOption[] {
+  const { productCode, areaSqft, width, height, destZip, rushLevel } = input;
+  
+  // Check if item is oversize
+  const longestEdge = Math.max(width, height);
+  const isOversize = longestEdge > SHIPPING_CONFIG.freightRules.longestEdgeIn;
+  
+  const productionDays = computeProductionDays(productCode, input.quantity, areaSqft, rushLevel);
+  const shipDate = computeShipDate(new Date(), SHIPPING_CONFIG.dailyCutoffLocal, productionDays);
+  
+  const options: DeliveryOption[] = [];
+  
+  if (isOversize) {
+    // Oversize items go freight only
+    const transitDays = estimateTransitDays('FREIGHT', '90210', destZip, true);
+    const deliveryDate = computeDeliveryDate(shipDate, transitDays, 'FREIGHT');
+    
+    options.push({
+      code: 'FREIGHT',
+      label: `Freight — $${(1500 / 100).toFixed(2)} — arrives ${formatETA({ promisedDate: deliveryDate.toISOString().split('T')[0] })}`,
+      arrivalDate: deliveryDate.toISOString().split('T')[0],
+      costCents: 1500, // $15.00
+      guaranteed: false,
+      notes: 'Large item — ships on pallet',
+    });
+  } else {
+    // Standard shipping options
+    const groundTransit = estimateTransitDays('GROUND', '90210', destZip, false);
+    const twoDayTransit = estimateTransitDays('2DAY', '90210', destZip, false);
+    const overnightTransit = estimateTransitDays('OVERNIGHT', '90210', destZip, false);
+    
+    const groundDelivery = computeDeliveryDate(shipDate, groundTransit, 'GROUND');
+    const twoDayDelivery = computeDeliveryDate(shipDate, twoDayTransit, '2DAY');
+    const overnightDelivery = computeDeliveryDate(shipDate, overnightTransit, 'OVERNIGHT');
+    
+    options.push(
+      {
+        code: 'GROUND',
+        label: `Standard — FREE — arrives ${formatETA({ promisedDate: groundDelivery.toISOString().split('T')[0] })} (Ground)`,
+        arrivalDate: groundDelivery.toISOString().split('T')[0],
+        costCents: 0,
+        guaranteed: false,
+      },
+      {
+        code: '2DAY',
+        label: `Expedited — $20.00 — arrives ${formatETA({ promisedDate: twoDayDelivery.toISOString().split('T')[0] })} (2-Day)`,
+        arrivalDate: twoDayDelivery.toISOString().split('T')[0],
+        costCents: 2000,
+        guaranteed: true,
+      },
+      {
+        code: 'OVERNIGHT',
+        label: `Rush — $60.00 — arrives ${formatETA({ promisedDate: overnightDelivery.toISOString().split('T')[0] })} (Overnight)`,
+        arrivalDate: overnightDelivery.toISOString().split('T')[0],
+        costCents: 6000,
+        guaranteed: true,
+      }
+    );
+  }
+  
+  return options;
+}
+
 // Business hours check
 export function isBusinessHours(date: Date = new Date()): boolean {
   const hour = date.getHours();
@@ -256,7 +434,7 @@ export function getNextBusinessDay(date: Date = new Date()): Date {
   const nextDay = new Date(date);
   nextDay.setDate(nextDay.getDate() + 1);
   
-  while (isWeekend(nextDay)) {
+  while (!isBusinessDay(nextDay)) {
     nextDay.setDate(nextDay.getDate() + 1);
   }
   

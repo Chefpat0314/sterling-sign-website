@@ -20,7 +20,9 @@ export type EventName =
   | 'begin_checkout' | 'select_shipping' | 'payment_attempt' | 'purchase'
   | 'proof_request' | 'proof_view' | 'proof_approve' | 'proof_change_request'
   | 'reorder_click' | 'order_track_view'
-  | 'qa_pass' | 'qa_fail' | 'ship_label' | 'delivered' | 'on_time_check';
+  | 'qa_pass' | 'qa_fail' | 'ship_label' | 'delivered' | 'on_time_check'
+  | 'delivery_date_shown' | 'cutoff_timer_viewed' | 'shipping_method_selected'
+  | 'promise_committed' | 'promise_met' | 'promise_missed' | 'damage_claim_started';
 
 export type EventPayload = z.infer<typeof EventSchema>;
 
@@ -221,6 +223,54 @@ class Analytics {
   measureTTQ(startTime: number, productId?: string): void {
     const ms = Date.now() - startTime;
     this.ttqReady(ms, productId);
+  }
+
+  // Shipping and delivery events
+  deliveryDateShown(product: string, destZip: string, methodSuggested: string, arrivalDate: string, cutoffState: string): void {
+    this.track('delivery_date_shown', {
+      product,
+      meta: { destZip, methodSuggested, arrivalDate, cutoffState }
+    });
+  }
+
+  cutoffTimerViewed(secondsRemaining: number, cutoffState: string): void {
+    this.track('cutoff_timer_viewed', {
+      meta: { secondsRemaining, cutoffState }
+    });
+  }
+
+  shippingMethodSelected(method: string, cost: number, arrival: string, guaranteed: boolean): void {
+    this.track('shipping_method_selected', {
+      meta: { method, cost, arrival, guaranteed }
+    });
+  }
+
+  promiseCommitted(orderId: string, method: string, promisedArrivalUtc: string): void {
+    this.track('promise_committed', {
+      orderId,
+      meta: { method, promisedArrivalUtc }
+    });
+  }
+
+  promiseMet(orderId: string, actualDeliveryUtc: string, deltaDays: number): void {
+    this.track('promise_met', {
+      orderId,
+      meta: { actualDeliveryUtc, deltaDays }
+    });
+  }
+
+  promiseMissed(orderId: string, actualDeliveryUtc: string, deltaDays: number): void {
+    this.track('promise_missed', {
+      orderId,
+      meta: { actualDeliveryUtc, deltaDays }
+    });
+  }
+
+  damageClaimStarted(orderId: string, productType: string, carrier: string): void {
+    this.track('damage_claim_started', {
+      orderId,
+      meta: { productType, carrier }
+    });
   }
 }
 
