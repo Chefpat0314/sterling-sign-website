@@ -242,7 +242,7 @@ export default function ConfiguratorWizard({ productCode, onAddToCart, className
                   <label key={option.key} className="flex items-center space-x-3">
                     <input
                       type="checkbox"
-                      checked={config.options?.[option.key] || false}
+                      checked={Boolean(config.options?.[option.key]) || false}
                       onChange={(e) => updateConfig({
                         options: { ...config.options, [option.key]: e.target.checked }
                       })}
