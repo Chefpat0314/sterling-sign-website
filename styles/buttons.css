@@ -1,0 +1,66 @@
+/* Consistent Button Styles for Sterling Sign Solutions */
+
+/* Primary Button - Main CTA */
+.btn-primary {
+  @apply inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Secondary Button - Alternative CTA */
+.btn-secondary {
+  @apply inline-flex items-center px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold border-2 border-gray-200 hover:border-blue-300 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Tertiary Button - Subtle CTA */
+.btn-tertiary {
+  @apply inline-flex items-center px-4 py-2 text-blue-600 hover:text-blue-700 font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded transition-all duration-200;
+}
+
+/* Large Primary Button - Hero CTAs */
+.btn-primary-lg {
+  @apply inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed text-lg;
+}
+
+/* Large Secondary Button - Hero CTAs */
+.btn-secondary-lg {
+  @apply inline-flex items-center px-8 py-4 bg-white text-gray-900 rounded-xl font-semibold border-2 border-gray-200 hover:border-blue-300 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed text-lg;
+}
+
+/* Button with Icon */
+.btn-with-icon {
+  @apply inline-flex items-center;
+}
+
+.btn-with-icon svg {
+  @apply ml-2 w-5 h-5;
+}
+
+/* Accessibility improvements */
+.btn-primary:focus,
+.btn-secondary:focus,
+.btn-tertiary:focus,
+.btn-primary-lg:focus,
+.btn-secondary-lg:focus {
+  @apply ring-2 ring-blue-500 ring-offset-2;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .btn-primary {
+    @apply border-2 border-blue-800;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-gray-800;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary,
+  .btn-secondary,
+  .btn-tertiary,
+  .btn-primary-lg,
+  .btn-secondary-lg {
+    @apply transition-none;
+  }
+}

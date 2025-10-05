@@ -39,7 +39,9 @@ function createHubspotForm(targetSelector) {
     target: targetSelector,
     onFormReady: function ($form) {
       const p = new URLSearchParams(window.location.search);
-      const map = {
+      
+      // Map URL parameters to form fields
+      const fieldMap = {
         firstname: "name",
         email: "email",
         phone: "phone",
@@ -47,15 +49,53 @@ function createHubspotForm(targetSelector) {
         product: "product",
         size: "size",
         notes: "notes",
+        message: "notes"
       };
-      Object.entries(map).forEach(([field, param]) => {
+      
+      // Pre-fill form fields from URL parameters
+      Object.entries(fieldMap).forEach(([field, param]) => {
         const val = p.get(param);
-        if (val) $form.find(`[name="${field}"]`).val(val);
+        if (val) {
+          const input = $form.find(`[name="${field}"]`);
+          if (input.length) {
+            input.val(decodeURIComponent(val));
+          }
+        }
       });
-      ["utm_source", "utm_medium", "utm_campaign", "rfq_source"].forEach((h) => {
-        const v = p.get(h);
-        if (v) $form.find(`[name="${h}"]`).val(v);
+      
+      // Handle UTM and tracking parameters
+      const trackingFields = [
+        "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
+        "rfq_source", "referrer", "landing_page"
+      ];
+      
+      trackingFields.forEach((param) => {
+        const val = p.get(param);
+        if (val) {
+          const input = $form.find(`[name="${param}"]`);
+          if (input.length) {
+            input.val(decodeURIComponent(val));
+          } else {
+            // Create hidden field if it doesn't exist
+            $form.append(`<input type="hidden" name="${param}" value="${decodeURIComponent(val)}" />`);
+          }
+        }
       });
+      
+      // Set default source if not provided
+      if (!p.get("rfq_source")) {
+        const existingSource = $form.find('[name="rfq_source"]');
+        if (existingSource.length) {
+          existingSource.val("website");
+        } else {
+          $form.append('<input type="hidden" name="rfq_source" value="website" />');
+        }
+      }
+      
+      // Set landing page
+      if (!p.get("landing_page")) {
+        $form.append(`<input type="hidden" name="landing_page" value="${window.location.href}" />`);
+      }
     },
   });
   console.log("Provider selected: hubspot");
@@ -133,6 +173,20 @@ export default function RequestQuotePage() {
         </p>
 
         <div id="hubspot-form" className="mt-6" />
+        
+        {/* Noscript fallback */}
+        <noscript>
+          <div className="mt-6 p-6 bg-blue-50 border border-blue-200 rounded-lg">
+            <h3 className="text-lg font-semibold text-blue-900 mb-2">JavaScript Required</h3>
+            <p className="text-blue-800 mb-4">
+              This form requires JavaScript to function properly. Please enable JavaScript in your browser or contact us directly.
+            </p>
+            <div className="space-y-2 text-blue-700">
+              <p><strong>Phone:</strong> <a href="tel:+1234567890" className="hover:underline">(123) 456-7890</a></p>
+              <p><strong>Email:</strong> <a href="mailto:info@sterlingsignsolutions.com" className="hover:underline">info@sterlingsignsolutions.com</a></p>
+            </div>
+          </div>
+        </noscript>
       </div>
     </>
   );
