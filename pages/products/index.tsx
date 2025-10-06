@@ -1,49 +1,12 @@
-// pages/products/index-new.tsx - Enhanced product catalog
+// pages/products/index.tsx - Enhanced product catalog
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { analytics } from '../../lib/metrics';
-import { 
-  PRICING, 
-  getProductName, 
-  getProductCategory, 
-  formatPrice,
-  QuoteConfig,
-  QuoteResult 
-} from '../../lib/pricing';
+import { getAllCatalog, getAllCategories, searchCatalog, CatalogItem } from '../../lib/catalog';
+import { formatPrice } from '../../lib/pricing';
 import { calculateETA, formatETA } from '../../lib/eta';
-import { formatSquareFeet } from '../../lib/format';
-
-interface Product {
-  id: string;
-  name: string;
-  category: string;
-  image: string;
-  description: string;
-  startingPrice: number;
-  minSize: string;
-  maxSize: string;
-  popular: boolean;
-  features: string[];
-}
-
-// Generate product data from pricing table
-const generateProducts = (): Product[] => {
-  return Object.entries(PRICING).map(([code, config]) => ({
-    id: code,
-    name: getProductName(code),
-    category: getProductCategory(code),
-    image: `/images/products/${code.toLowerCase()}.jpg`,
-    description: getProductDescription(code),
-    startingPrice: config.minCharge,
-    minSize: getMinSize(code),
-    maxSize: getMaxSize(code),
-    popular: ['BAN-13OZ', 'COR-4MM', 'ALU-040', 'ADA-ROOM'].includes(code),
-    features: getProductFeatures(code),
-  }));
-};
+import ProductGrid from '../../components/catalog/ProductGrid';
 
 const getProductDescription = (code: string): string => {
   const descriptions: Record<string, string> = {
@@ -106,18 +69,20 @@ const getProductFeatures = (code: string): string[] => {
 };
 
 export default function ProductsPage() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<CatalogItem[]>([]);
+  const [filteredProducts, setFilteredProducts] = useState<CatalogItem[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [sortBy, setSortBy] = useState<string>('popular');
   const [zipCode, setZipCode] = useState<string>('');
   const [etaResults, setEtaResults] = useState<Record<string, any>>({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const productList = generateProducts();
+    const productList = getAllCatalog();
     setProducts(productList);
     setFilteredProducts(productList);
+    setLoading(false);
     analytics.viewCategory('products');
   }, []);
 
@@ -150,10 +115,10 @@ export default function ProductsPage() {
 
     // Filter by search query
     if (searchQuery) {
-      filtered = filtered.filter(product =>
-        product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        product.description.toLowerCase().includes(searchQuery.toLowerCase())
-      );
+      filtered = searchCatalog(searchQuery);
+      if (selectedCategory !== 'all') {
+        filtered = filtered.filter(product => product.category === selectedCategory);
+      }
     }
 
     // Sort products
@@ -174,7 +139,7 @@ export default function ProductsPage() {
     setFilteredProducts(filtered);
   }, [products, selectedCategory, searchQuery, sortBy]);
 
-  const categories = ['all', ...Array.from(new Set(products.map(p => p.category)))];
+  const categories = ['all', ...getAllCategories()];
 
   const handleProductClick = (productId: string) => {
     analytics.viewProduct(productId, 'products');
@@ -302,84 +267,9 @@ export default function ProductsPage() {
         {/* Products Grid */}
         <section className="py-12">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProducts.map((product, index) => (
-                <motion.div
-                  key={product.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  whileHover={{ y: -5 }}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-                >
-                  {/* Product Image */}
-                  <div className="relative h-48 bg-gray-100">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      className="object-cover"
-                    />
-                    {product.popular && (
-                      <div className="absolute top-4 left-4 bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-semibold">
-                        Popular
-                      </div>
-                    )}
-                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold">
-                      From {formatPrice(product.startingPrice)}
-                    </div>
-                  </div>
+            <ProductGrid products={filteredProducts} loading={loading} />
 
-                  {/* Product Info */}
-                  <div className="p-6">
-                    <div className="mb-4">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">
-                        {product.name}
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-3">
-                        {product.description}
-                      </p>
-                      <div className="text-sm text-gray-500 mb-3">
-                        Size: {product.minSize} - {product.maxSize}
-                      </div>
-                    </div>
-
-                    {/* Features */}
-                    <div className="mb-4">
-                      <div className="text-sm font-medium text-gray-900 mb-2">Features:</div>
-                      <ul className="text-sm text-gray-600 space-y-1">
-                        {product.features.slice(0, 3).map((feature, idx) => (
-                          <li key={idx} className="flex items-center">
-                            <span className="text-green-500 mr-2">✓</span>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Delivery Info */}
-                    {zipCode && zipCode.length === 5 && etaResults[product.id] && (
-                      <div className="mb-4 p-3 bg-blue-50 rounded-lg">
-                        <div className="text-sm text-blue-800">
-                          <span className="font-medium">Delivered by:</span> {formatETA(etaResults[product.id])}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* CTA */}
-                    <Link
-                      href={`/products/${product.id.toLowerCase()}`}
-                      onClick={() => handleProductClick(product.id)}
-                      className="block w-full text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-                    >
-                      Get Quote
-                    </Link>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {filteredProducts.length === 0 && (
+            {filteredProducts.length === 0 && !loading && (
               <div className="text-center py-12">
                 <div className="text-4xl mb-4">🔍</div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">

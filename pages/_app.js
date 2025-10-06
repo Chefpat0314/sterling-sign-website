@@ -5,6 +5,7 @@ import '../styles/accessibility.css';   // <-- accessibility enhancements
 import '../styles/tokens.css';   // <-- Sterling design tokens
 import Layout from '../components/Layout';
 import TrustBar from '../components/TrustBar';
+import CookieBanner from '../components/trust/CookieBanner';
 import { analytics } from '../lib/metrics';
 import { useEffect } from 'react';
 
@@ -20,6 +21,7 @@ export default function MyApp({ Component, pageProps }) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <CookieBanner />
     </>
   );
 }

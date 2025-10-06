@@ -1,0 +1,362 @@
+[
+  {
+    "id": "banners-13oz",
+    "slug": "banners-13oz",
+    "name": "13oz Vinyl Banner",
+    "category": "Banners",
+    "image": "/images/products/vinyl-banner-hero.svg",
+    "excerpt": "Durable vinyl banners perfect for construction sites, events, and promotions.",
+    "description": "Professional 13oz vinyl banners with weather-resistant material, UV-resistant inks, and reinforced hems. Perfect for construction sites, events, and promotional displays.",
+    "status": "active",
+    "startingPrice": 19,
+    "minSize": "12\" x 12\"",
+    "maxSize": "10' x 20'",
+    "popular": true,
+    "features": [
+      "Weather resistant",
+      "Grommets included", 
+      "Full color printing",
+      "Fast 24-48 hour turnaround"
+    ]
+  },
+  {
+    "id": "banners-18oz",
+    "slug": "banners-18oz",
+    "name": "18oz Blockout Banner",
+    "category": "Banners",
+    "image": "/images/products/vinyl-banner-hero.svg",
+    "excerpt": "Heavy-duty blockout banners with superior opacity and durability.",
+    "description": "Premium 18oz blockout vinyl banners with double-sided printing capability and reinforced corners. Ideal for high-traffic areas and professional displays.",
+    "status": "active",
+    "startingPrice": 25,
+    "minSize": "12\" x 12\"",
+    "maxSize": "10' x 20'",
+    "popular": true,
+    "features": [
+      "Blockout material",
+      "Double-sided option",
+      "Reinforced corners",
+      "Professional finish"
+    ]
+  },
+  {
+    "id": "banners-20oz",
+    "slug": "banners-20oz",
+    "name": "20oz Premium Banner",
+    "category": "Banners",
+    "image": "/images/products/vinyl-banner-hero.svg",
+    "excerpt": "Premium vinyl banners with maximum strength and weather resistance.",
+    "description": "Heavy-duty 20oz vinyl banners with maximum durability and weather resistance. Perfect for long-term outdoor installations and high-wind areas.",
+    "status": "active",
+    "startingPrice": 35,
+    "minSize": "12\" x 12\"",
+    "maxSize": "10' x 20'",
+    "popular": false,
+    "features": [
+      "Premium vinyl",
+      "UV resistant",
+      "Professional finish",
+      "Long-term durability"
+    ]
+  },
+  {
+    "id": "coroplast-4mm",
+    "slug": "coroplast-4mm",
+    "name": "4mm Coroplast Sign",
+    "category": "Yard Signs",
+    "image": "/images/products/coroplast-sign-hero.svg",
+    "excerpt": "Lightweight coroplast signs ideal for yard signs and temporary displays.",
+    "description": "Lightweight 4mm coroplast signs perfect for yard signs, real estate signs, and temporary displays. Weather-resistant and easy to install.",
+    "status": "active",
+    "startingPrice": 12,
+    "minSize": "12\" x 12\"",
+    "maxSize": "4' x 8'",
+    "popular": true,
+    "features": [
+      "Lightweight",
+      "Weather resistant",
+      "Easy installation",
+      "Cost effective"
+    ]
+  },
+  {
+    "id": "coroplast-6mm",
+    "slug": "coroplast-6mm",
+    "name": "6mm Coroplast Sign",
+    "category": "Yard Signs",
+    "image": "/images/products/coroplast-sign-hero.svg",
+    "excerpt": "Thicker coroplast signs for better rigidity and longevity.",
+    "description": "Heavy-duty 6mm coroplast signs with increased rigidity and durability. Perfect for long-term installations and high-traffic areas.",
+    "status": "active",
+    "startingPrice": 18,
+    "minSize": "12\" x 12\"",
+    "maxSize": "4' x 8'",
+    "popular": false,
+    "features": [
+      "Rigid construction",
+      "Durable",
+      "Outdoor rated",
+      "Professional grade"
+    ]
+  },
+  {
+    "id": "aluminum-040",
+    "slug": "aluminum-040",
+    "name": ".040 Aluminum Sign",
+    "category": "Yard Signs",
+    "image": "/images/products/aluminum-sign-hero.svg",
+    "excerpt": "Professional aluminum signs for permanent outdoor installations.",
+    "description": "Professional-grade .040 aluminum signs with high-performance vinyl graphics. Built to last decades with crisp, fade-resistant graphics.",
+    "status": "active",
+    "startingPrice": 45,
+    "minSize": "12\" x 12\"",
+    "maxSize": "4' x 8'",
+    "popular": true,
+    "features": [
+      "Rust resistant",
+      "Professional grade",
+      "Long lasting",
+      "Weatherproof"
+    ]
+  },
+  {
+    "id": "aluminum-063",
+    "slug": "aluminum-063",
+    "name": ".063 Aluminum Sign",
+    "category": "Yard Signs",
+    "image": "/images/products/aluminum-sign-hero.svg",
+    "excerpt": "Heavy-duty aluminum signs for high-traffic areas.",
+    "description": "Heavy-duty .063 aluminum signs with maximum durability for high-traffic areas and industrial applications.",
+    "status": "active",
+    "startingPrice": 65,
+    "minSize": "12\" x 12\"",
+    "maxSize": "4' x 8'",
+    "popular": false,
+    "features": [
+      "Heavy duty",
+      "Industrial grade",
+      "Maximum durability",
+      "Professional finish"
+    ]
+  },
+  {
+    "id": "acm-3mm",
+    "slug": "acm-3mm",
+    "name": "3mm ACM Sign",
+    "category": "Professional Signs",
+    "image": "/images/products/acm-sign-hero.svg",
+    "excerpt": "Aluminum composite material signs with modern appearance.",
+    "description": "Modern 3mm aluminum composite material signs with sleek appearance and professional finish. Perfect for contemporary business applications.",
+    "status": "active",
+    "startingPrice": 55,
+    "minSize": "12\" x 12\"",
+    "maxSize": "5' x 10'",
+    "popular": false,
+    "features": [
+      "Modern appearance",
+      "Lightweight",
+      "Easy mounting",
+      "Professional finish"
+    ]
+  },
+  {
+    "id": "acm-6mm",
+    "slug": "acm-6mm",
+    "name": "6mm ACM Sign",
+    "category": "Professional Signs",
+    "image": "/images/products/acm-sign-hero.svg",
+    "excerpt": "Thick ACM signs for large format applications.",
+    "description": "Heavy-duty 6mm aluminum composite material signs for large format applications and high-end installations.",
+    "status": "active",
+    "startingPrice": 75,
+    "minSize": "12\" x 12\"",
+    "maxSize": "5' x 10'",
+    "popular": false,
+    "features": [
+      "Thick construction",
+      "Professional finish",
+      "Durable",
+      "Large format capable"
+    ]
+  },
+  {
+    "id": "pvc-3mm",
+    "slug": "pvc-3mm",
+    "name": "3mm PVC Foamboard",
+    "category": "Professional Signs",
+    "image": "/images/products/pvc-sign-hero.svg",
+    "excerpt": "Rigid PVC foam board signs for indoor and outdoor use.",
+    "description": "Versatile 3mm PVC foam board signs suitable for both indoor and outdoor applications. Easy to work with and professional appearance.",
+    "status": "active",
+    "startingPrice": 35,
+    "minSize": "12\" x 12\"",
+    "maxSize": "4' x 8'",
+    "popular": false,
+    "features": [
+      "Versatile",
+      "Indoor/outdoor",
+      "Easy to work with",
+      "Professional grade"
+    ]
+  },
+  {
+    "id": "pvc-6mm",
+    "slug": "pvc-6mm",
+    "name": "6mm PVC Foamboard",
+    "category": "Professional Signs",
+    "image": "/images/products/pvc-sign-hero.svg",
+    "excerpt": "Thick PVC foam board for maximum durability.",
+    "description": "Heavy-duty 6mm PVC foam board signs with maximum durability and professional appearance for demanding applications.",
+    "status": "active",
+    "startingPrice": 55,
+    "minSize": "12\" x 12\"",
+    "maxSize": "4' x 8'",
+    "popular": false,
+    "features": [
+      "Thick and rigid",
+      "Weather resistant",
+      "Professional grade",
+      "Maximum durability"
+    ]
+  },
+  {
+    "id": "ada-room-signs",
+    "slug": "ada-room-signs",
+    "name": "ADA Room Signs",
+    "category": "ADA Signs",
+    "image": "/images/products/ada-sign-hero.svg",
+    "excerpt": "ADA-compliant room signs with braille and tactile elements.",
+    "description": "Professional ADA-compliant room identification signs with raised braille and tactile elements. Meets all accessibility requirements.",
+    "status": "active",
+    "startingPrice": 85,
+    "minSize": "4\" x 6\"",
+    "maxSize": "8\" x 12\"",
+    "popular": true,
+    "features": [
+      "ADA compliant",
+      "Braille included",
+      "Tactile elements",
+      "Professional mounting"
+    ]
+  },
+  {
+    "id": "decals-vinyl",
+    "slug": "decals-vinyl",
+    "name": "Vinyl Decals",
+    "category": "Window & Wall Graphics",
+    "image": "/images/products/vinyl-decal-hero.svg",
+    "excerpt": "Vinyl decals for windows, walls, and vehicles.",
+    "description": "High-quality vinyl decals perfect for windows, walls, and vehicles. Removable and repositionable with professional adhesive.",
+    "status": "active",
+    "startingPrice": 25,
+    "minSize": "6\" x 6\"",
+    "maxSize": "4' x 8'",
+    "popular": true,
+    "features": [
+      "Removable",
+      "Full color",
+      "Custom shapes",
+      "Professional adhesive"
+    ]
+  },
+  {
+    "id": "window-perforated",
+    "slug": "window-perforated",
+    "name": "Window Perforated",
+    "category": "Window & Wall Graphics",
+    "image": "/images/products/window-graphic-hero.svg",
+    "excerpt": "Perforated window graphics with one-way visibility.",
+    "description": "Professional perforated window graphics that provide one-way visibility from inside while maintaining clear graphics from outside.",
+    "status": "active",
+    "startingPrice": 35,
+    "minSize": "12\" x 12\"",
+    "maxSize": "4' x 8'",
+    "popular": false,
+    "features": [
+      "One-way visibility",
+      "Professional appearance",
+      "Easy removal",
+      "UV resistant"
+    ]
+  },
+  {
+    "id": "wall-decals",
+    "slug": "wall-decals",
+    "name": "Wall Decals",
+    "category": "Window & Wall Graphics",
+    "image": "/images/products/wall-decal-hero.svg",
+    "excerpt": "Wall decals and graphics for interior branding.",
+    "description": "Professional wall decals and graphics perfect for interior branding, wayfinding, and decorative applications.",
+    "status": "active",
+    "startingPrice": 30,
+    "minSize": "12\" x 12\"",
+    "maxSize": "4' x 8'",
+    "popular": false,
+    "features": [
+      "Interior safe",
+      "Full color",
+      "Custom designs",
+      "Easy installation"
+    ]
+  },
+  {
+    "id": "magnetic-vinyl",
+    "slug": "magnetic-vinyl",
+    "name": "Magnetic Signs",
+    "category": "Vehicle Signs",
+    "image": "/images/products/magnetic-sign-hero.svg",
+    "excerpt": "Magnetic signs for vehicles and metal surfaces.",
+    "description": "High-quality magnetic signs perfect for vehicles and metal surfaces. Removable and repositionable with strong magnetic backing.",
+    "status": "active",
+    "startingPrice": 45,
+    "minSize": "6\" x 6\"",
+    "maxSize": "2' x 4'",
+    "popular": true,
+    "features": [
+      "Magnetic backing",
+      "Removable",
+      "Vehicle safe",
+      "Weather resistant"
+    ]
+  },
+  {
+    "id": "floor-graphics",
+    "slug": "floor-graphics",
+    "name": "Floor Graphics",
+    "category": "Window & Wall Graphics",
+    "image": "/images/products/floor-graphic-hero.svg",
+    "excerpt": "Floor graphics and directional signage.",
+    "description": "Professional floor graphics and directional signage with slip-resistant material. Perfect for wayfinding and safety applications.",
+    "status": "active",
+    "startingPrice": 40,
+    "minSize": "12\" x 12\"",
+    "maxSize": "4' x 8'",
+    "popular": false,
+    "features": [
+      "Slip resistant",
+      "High traffic rated",
+      "Easy maintenance",
+      "Safety compliant"
+    ]
+  },
+  {
+    "id": "safety-labels",
+    "slug": "safety-labels",
+    "name": "Safety Labels",
+    "category": "Safety Signs",
+    "image": "/images/products/safety-sign-hero.svg",
+    "excerpt": "Safety labels and identification signs.",
+    "description": "Professional safety labels and identification signs that meet OSHA and ANSI standards for workplace safety.",
+    "status": "active",
+    "startingPrice": 15,
+    "minSize": "3\" x 3\"",
+    "maxSize": "12\" x 12\"",
+    "popular": true,
+    "features": [
+      "Durable materials",
+      "Safety compliant",
+      "Long lasting",
+      "OSHA approved"
+    ]
+  }
+]
