@@ -1,0 +1,157 @@
+{
+  "generated_at": "2024-01-01T00:00:00Z",
+  "source": "B2Sign crawl analysis",
+  "sterling_ia": {
+    "top_nav": [
+      {
+        "label": "Products",
+        "url": "/products",
+        "children": [
+          {
+            "label": "Banners",
+            "url": "/products/banners",
+            "children": [
+              { "label": "Vinyl Banners", "url": "/products/banners/vinyl" },
+              { "label": "Mesh Banners", "url": "/products/banners/mesh" },
+              { "label": "Fabric Banners", "url": "/products/banners/fabric" }
+            ]
+          },
+          {
+            "label": "Yard Signs",
+            "url": "/products/yard-signs",
+            "children": [
+              { "label": "Coroplast Signs", "url": "/products/yard-signs/coroplast" },
+              { "label": "H-Stakes", "url": "/products/yard-signs/h-stakes" }
+            ]
+          },
+          {
+            "label": "Decals",
+            "url": "/products/decals",
+            "children": [
+              { "label": "Window Decals", "url": "/products/decals/window" },
+              { "label": "Wall Decals", "url": "/products/decals/wall" },
+              { "label": "Vehicle Decals", "url": "/products/decals/vehicle" }
+            ]
+          },
+          {
+            "label": "ADA Signs",
+            "url": "/products/ada-signs",
+            "children": [
+              { "label": "Room Signs", "url": "/products/ada-signs/room" },
+              { "label": "Restroom Signs", "url": "/products/ada-signs/restroom" },
+              { "label": "Directional Signs", "url": "/products/ada-signs/directional" }
+            ]
+          },
+          {
+            "label": "Safety Signs",
+            "url": "/products/safety-signs",
+            "children": [
+              { "label": "Safety Labels", "url": "/products/safety-signs/labels" },
+              { "label": "Warning Signs", "url": "/products/safety-signs/warning" },
+              { "label": "Floor Graphics", "url": "/products/safety-signs/floor" }
+            ]
+          },
+          {
+            "label": "Trade Show",
+            "url": "/products/trade-show",
+            "children": [
+              { "label": "Banner Stands", "url": "/products/trade-show/banner-stands" },
+              { "label": "Table Covers", "url": "/products/trade-show/table-covers" }
+            ]
+          },
+          {
+            "label": "Real Estate",
+            "url": "/products/real-estate",
+            "children": [
+              { "label": "For Sale Signs", "url": "/products/real-estate/for-sale" },
+              { "label": "Open House Signs", "url": "/products/real-estate/open-house" }
+            ]
+          },
+          {
+            "label": "Vehicle Signs",
+            "url": "/products/vehicle-signs",
+            "children": [
+              { "label": "Magnetic Signs", "url": "/products/vehicle-signs/magnetic" },
+              { "label": "Vinyl Wraps", "url": "/products/vehicle-signs/vinyl-wraps" }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Services",
+        "url": "/services",
+        "children": [
+          { "label": "Design", "url": "/services/design" },
+          { "label": "Installation", "url": "/services/installation" },
+          { "label": "Maintenance", "url": "/services/maintenance" }
+        ]
+      },
+      {
+        "label": "Industries",
+        "url": "/industries",
+        "children": [
+          { "label": "Construction", "url": "/industries/construction" },
+          { "label": "Healthcare", "url": "/industries/healthcare" },
+          { "label": "Retail", "url": "/industries/retail" }
+        ]
+      }
+    ],
+    "category_pages": [
+      {
+        "slug": "/products/banners",
+        "title": "Custom Banners | Sterling Sign Solutions",
+        "h1": "Custom Banners for Every Event",
+        "description": "Professional vinyl, mesh, and fabric banners for construction sites, events, and promotions. Fast delivery, free online proof.",
+        "subcategories": ["vinyl", "mesh", "fabric"],
+        "featured_products": ["vinyl-banner-13oz", "mesh-banner-18oz", "fabric-banner-premium"]
+      },
+      {
+        "slug": "/products/yard-signs",
+        "title": "Yard Signs & Real Estate Signs | Sterling Sign Solutions",
+        "h1": "Yard Signs That Get Noticed",
+        "description": "Durable coroplast yard signs for real estate, political campaigns, and events. Weather-resistant, easy installation.",
+        "subcategories": ["coroplast", "h-stakes"],
+        "featured_products": ["coroplast-4mm", "coroplast-6mm", "h-stakes-aluminum"]
+      },
+      {
+        "slug": "/products/decals",
+        "title": "Custom Decals & Stickers | Sterling Sign Solutions",
+        "h1": "Custom Decals for Any Surface",
+        "description": "High-quality vinyl decals for windows, walls, vehicles, and more. Custom cut, easy application.",
+        "subcategories": ["window", "wall", "vehicle"],
+        "featured_products": ["window-decal-vinyl", "wall-decal-removable", "vehicle-decal-magnetic"]
+      },
+      {
+        "slug": "/products/ada-signs",
+        "title": "ADA Compliant Signs | Sterling Sign Solutions",
+        "h1": "ADA Compliant Signage Solutions",
+        "description": "Professional ADA compliant signs with tactile text and braille. Meet accessibility requirements with style.",
+        "subcategories": ["room", "restroom", "directional"],
+        "featured_products": ["ada-room-sign", "ada-restroom-sign", "ada-directional-sign"]
+      },
+      {
+        "slug": "/products/safety-signs",
+        "title": "Safety Signs & Labels | Sterling Sign Solutions",
+        "h1": "Safety Signs That Protect",
+        "description": "OSHA compliant safety signs and labels for workplace safety. Durable materials, clear messaging.",
+        "subcategories": ["labels", "warning", "floor"],
+        "featured_products": ["safety-label-poly", "warning-sign-aluminum", "floor-graphic-anti-slip"]
+      }
+    ],
+    "pdp_structure": {
+      "route_pattern": "/products/[category]/[slug]",
+      "sections": [
+        "hero_gallery",
+        "product_info",
+        "pricing_options",
+        "trust_rail",
+        "description_tabs",
+        "specifications",
+        "faq",
+        "reviews",
+        "shipping_returns",
+        "templates"
+      ]
+    }
+  }
+}

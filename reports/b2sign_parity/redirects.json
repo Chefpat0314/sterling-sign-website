@@ -1,0 +1,94 @@
+{
+  "generated_at": "2024-01-01T00:00:00Z",
+  "source": "B2Sign parity migration",
+  "redirects": [
+    {
+      "from": "/products/13oz-vinyl-banner",
+      "to": "/products/banners/vinyl-banner-13oz",
+      "status": 301,
+      "reason": "Legacy product slug to new category structure"
+    },
+    {
+      "from": "/products/.040-aluminum",
+      "to": "/products/safety-signs/aluminum-sign-040",
+      "status": 301,
+      "reason": "Legacy product slug to new category structure"
+    },
+    {
+      "from": "/products/door-hours",
+      "to": "/products/ada-signs/door-hours-sign",
+      "status": 301,
+      "reason": "Legacy product slug to new category structure"
+    },
+    {
+      "from": "/products/channel-letters",
+      "to": "/products/vehicle-signs/channel-letters",
+      "status": 301,
+      "reason": "Legacy product slug to new category structure"
+    },
+    {
+      "from": "/products/monument-signs",
+      "to": "/products/real-estate/monument-signs",
+      "status": 301,
+      "reason": "Legacy product slug to new category structure"
+    },
+    {
+      "from": "/products/wayfinding-signs",
+      "to": "/products/ada-signs/wayfinding-signs",
+      "status": 301,
+      "reason": "Legacy product slug to new category structure"
+    },
+    {
+      "from": "/products/vinyl-banner",
+      "to": "/products/banners/vinyl",
+      "status": 301,
+      "reason": "Generic category redirect"
+    },
+    {
+      "from": "/products/yard-sign",
+      "to": "/products/yard-signs",
+      "status": 301,
+      "reason": "Singular to plural redirect"
+    },
+    {
+      "from": "/products/decals",
+      "to": "/products/decals",
+      "status": 301,
+      "reason": "Category consistency"
+    },
+    {
+      "from": "/products/ada",
+      "to": "/products/ada-signs",
+      "status": 301,
+      "reason": "Shortened to full category name"
+    },
+    {
+      "from": "/products/safety",
+      "to": "/products/safety-signs",
+      "status": 301,
+      "reason": "Shortened to full category name"
+    },
+    {
+      "from": "/products/trade-show",
+      "to": "/products/trade-show",
+      "status": 301,
+      "reason": "Category consistency"
+    },
+    {
+      "from": "/products/real-estate",
+      "to": "/products/real-estate",
+      "status": 301,
+      "reason": "Category consistency"
+    },
+    {
+      "from": "/products/vehicle",
+      "to": "/products/vehicle-signs",
+      "status": 301,
+      "reason": "Shortened to full category name"
+    }
+  ],
+  "next_config_implementation": {
+    "description": "Add this to next.config.js to implement redirects",
+    "code": "module.exports = {\n  async redirects() {\n    return [\n      {\n        source: '/products/13oz-vinyl-banner',\n        destination: '/products/banners/vinyl-banner-13oz',\n        permanent: true,\n      },\n      {\n        source: '/products/.040-aluminum',\n        destination: '/products/safety-signs/aluminum-sign-040',\n        permanent: true,\n      },\n      {\n        source: '/products/door-hours',\n        destination: '/products/ada-signs/door-hours-sign',\n        permanent: true,\n      },\n      // Add more redirects as needed\n    ]\n  },\n}"
+  }
+}

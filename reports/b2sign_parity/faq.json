@@ -1,0 +1,86 @@
+{
+  "generated_at": "2024-01-01T00:00:00Z",
+  "source": "B2Sign parity analysis",
+  "faqs": [
+    {
+      "category": "general",
+      "question": "What materials are available for custom signs?",
+      "answer": "We offer a wide variety of materials including vinyl, coroplast, aluminum, acrylic, and more. Each material is selected for durability and suitability for your specific application and environment."
+    },
+    {
+      "category": "general", 
+      "question": "How long does production take?",
+      "answer": "Most products are ready within 24-48 hours of approval. Rush orders can be accommodated with same-day production for an additional fee. We'll provide accurate timelines during the quoting process."
+    },
+    {
+      "category": "general",
+      "question": "Do you provide installation services?",
+      "answer": "Yes, we offer professional installation services through our network of certified installers. Installation can be scheduled during the ordering process and is available in most metropolitan areas."
+    },
+    {
+      "category": "general",
+      "question": "What is your return policy?",
+      "answer": "We offer a 100% satisfaction guarantee. If you're not completely satisfied with your order, we'll work with you to make it right or provide a full refund. Returns are accepted within 30 days of delivery."
+    },
+    {
+      "category": "banners",
+      "question": "What types of banners do you offer?",
+      "answer": "We offer vinyl banners, mesh banners, fabric banners, and more. Each type is designed for specific applications - vinyl for general use, mesh for windy conditions, and fabric for indoor events."
+    },
+    {
+      "category": "banners",
+      "question": "What sizes are available for banners?",
+      "answer": "We can produce banners in virtually any size from small tabletop displays to large outdoor banners up to 10' x 20'. Custom sizes are available to meet your specific requirements."
+    },
+    {
+      "category": "ada-signs",
+      "question": "Are your ADA signs compliant with regulations?",
+      "answer": "Yes, all our ADA signs are designed to meet or exceed current ADA compliance requirements. They include tactile text, braille, and proper contrast ratios as specified by the Americans with Disabilities Act."
+    },
+    {
+      "category": "ada-signs",
+      "question": "What materials are used for ADA signs?",
+      "answer": "Our ADA signs are typically made from acrylic or photopolymer materials that provide the required tactile characteristics. We use high-contrast colors and non-glare finishes for optimal visibility."
+    },
+    {
+      "category": "safety-signs",
+      "question": "Do your safety signs meet OSHA requirements?",
+      "answer": "Yes, our safety signs are designed to meet OSHA and ANSI standards. They use appropriate colors, symbols, and text as specified by workplace safety regulations."
+    },
+    {
+      "category": "safety-signs",
+      "question": "What types of safety signs do you offer?",
+      "answer": "We offer warning signs, caution signs, danger signs, safety instruction signs, and custom safety labels. All signs are made from durable materials suitable for industrial environments."
+    },
+    {
+      "category": "shipping",
+      "question": "What are your shipping options?",
+      "answer": "We offer standard shipping (3-5 business days), expedited shipping (1-2 business days), and same-day pickup for local customers. Free shipping is available on orders over $100."
+    },
+    {
+      "category": "shipping",
+      "question": "Do you ship nationwide?",
+      "answer": "Yes, we ship to all 50 states and can accommodate international shipping for select products. We work with reliable carriers to ensure your signs arrive on time and in perfect condition."
+    },
+    {
+      "category": "design",
+      "question": "Do you provide design services?",
+      "answer": "Yes, our experienced design team can create custom designs for your signs. We also offer design templates and can work with your existing artwork to ensure the best possible results."
+    },
+    {
+      "category": "design",
+      "question": "What file formats do you accept?",
+      "answer": "We accept most common file formats including AI, EPS, PDF, PNG, and JPG. For best results, vector files (AI, EPS, PDF) are preferred as they can be scaled without quality loss."
+    },
+    {
+      "category": "pricing",
+      "question": "How is pricing calculated?",
+      "answer": "Pricing is based on size, material, quantity, and any special requirements. We provide free quotes for all projects and offer volume discounts for larger orders."
+    },
+    {
+      "category": "pricing",
+      "question": "Do you offer volume discounts?",
+      "answer": "Yes, we offer competitive volume discounts for larger orders. Discounts typically start at 10+ pieces and increase with quantity. Contact us for a custom quote on your specific needs."
+    }
+  ]
+}
