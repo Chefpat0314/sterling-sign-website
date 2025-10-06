@@ -58,40 +58,36 @@ export default function ProductPage() {
   // Loading state
   if (!slug || loading) {
     return (
-      <Layout>
-        <div className="max-w-6xl mx-auto py-12 px-4">
-          <div className="animate-pulse">
-            <div className="h-8 bg-gray-200 rounded w-1/3 mb-4"></div>
-            <div className="h-64 bg-gray-200 rounded mb-6"></div>
-            <div className="space-y-3">
-              <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-              <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-            </div>
+      <div className="max-w-6xl mx-auto py-12 px-4">
+        <div className="animate-pulse">
+          <div className="h-8 bg-gray-200 rounded w-1/3 mb-4"></div>
+          <div className="h-64 bg-gray-200 rounded mb-6"></div>
+          <div className="space-y-3">
+            <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+            <div className="h-4 bg-gray-200 rounded w-1/2"></div>
           </div>
         </div>
-      </Layout>
+      </div>
     );
   }
 
   // Not found
   if (!product) {
     return (
-      <Layout>
-        <div className="max-w-4xl mx-auto py-16 px-4">
-          <div className="text-center">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">Product Not Found</h1>
-            <p className="text-lg text-gray-600 mb-8">
-              We couldn't find the product you're looking for. Browse our available options below.
-            </p>
-            <Link
-              href="/products"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-            >
-              View All Products
-            </Link>
-          </div>
+      <div className="max-w-4xl mx-auto py-16 px-4">
+        <div className="text-center">
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">Product Not Found</h1>
+          <p className="text-lg text-gray-600 mb-8">
+            We couldn't find the product you're looking for. Browse our available options below.
+          </p>
+          <Link
+            href="/products"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+          >
+            View All Products
+          </Link>
         </div>
-      </Layout>
+      </div>
     );
   }
 
@@ -102,7 +98,7 @@ export default function ProductPage() {
   const canonical = `${siteUrl}/products/${slug}`;
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -269,6 +265,6 @@ export default function ProductPage() {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }
