@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sterling Forecast IO",
+  "type": "object",
+  "properties": {
+    "generatedAt": {"type": "string", "format": "date-time"},
+    "horizons": {"type": "array", "items": {"enum": ["14d", "30d", "60d"]}},
+    "persona": {"type": "string", "enum": ["contractor", "property_manager", "logistics", "healthcare", "smb"]},
+    "revenueForecast": {"type": "array", "items": {
+      "type": "object",
+      "properties": {
+        "date": {"type": "string", "format": "date"},
+        "point": {"type": "number"},
+        "ciLow": {"type": "number"},
+        "ciHigh": {"type": "number"}
+      },
+      "required": ["date", "point", "ciLow", "ciHigh"]
+    }},
+    "cashFlowStabilityIndex": {"type": "number", "minimum": 0, "maximum": 100},
+    "churnRisk": {"type": "number", "minimum": 0, "maximum": 1},
+    "anticipatedNeed": {
+      "type": "object",
+      "properties": {
+        "nextWindowStart": {"type": "string", "format": "date"},
+        "nextWindowEnd": {"type": "string", "format": "date"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "topSignals": {"type": "array", "items": {"type": "string"}}
+      },
+      "required": ["nextWindowStart", "nextWindowEnd", "confidence"]
+    },
+    "explanations": {"type": "array", "items": {"type": "string"}},
+    "creatorCheck": {
+      "type": "object",
+      "properties": {
+        "passed": {"type": "boolean"},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      },
+      "required": ["passed"]
+    }
+  },
+  "required": ["generatedAt", "horizons", "persona", "revenueForecast", "cashFlowStabilityIndex", "churnRisk", "anticipatedNeed", "creatorCheck"]
+}
