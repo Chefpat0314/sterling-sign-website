@@ -74,14 +74,30 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
           </ul>
         </div>
 
-        {/* CTA */}
-        <Link
-          href={`/products/${product.slug}`}
-          onClick={handleProductClick}
-          className="block w-full text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
-        >
-          Get Quote
-        </Link>
+        {/* CTAs */}
+        <div className="space-y-2">
+          <Link
+            href={`/products/${product.slug}`}
+            onClick={handleProductClick}
+            className="block w-full text-center px-6 py-2 bg-gray-600 text-white rounded-lg font-semibold hover:bg-gray-700 transition-colors shadow-md hover:shadow-lg"
+          >
+            View Details
+          </Link>
+          <Link
+            href={`/request-a-quote?product=${product.slug}`}
+            onClick={() => {
+              analytics.track('cta_clicked', {
+                productId: product.id,
+                productName: product.name,
+                category: product.category,
+                source: 'product_card_get_quote'
+              });
+            }}
+            className="block w-full text-center px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
+          >
+            Get Quote
+          </Link>
+        </div>
       </div>
     </motion.div>
   );

@@ -14,8 +14,16 @@ export default function ProductPage() {
   const [loading, setLoading] = useState(true);
 
   const handleGetQuote = () => {
-    console.log('Get Quote clicked, navigating to:', `/request-a-quote?product=${slug}`);
-    router.push(`/request-a-quote?product=${slug}`);
+    const url = `/request-a-quote?product=${slug}`;
+    console.log('Get Quote clicked, navigating to:', url);
+    
+    // Try router.push first, fallback to window.location
+    try {
+      router.push(url);
+    } catch (error) {
+      console.error('Router push failed, using window.location:', error);
+      window.location.href = url;
+    }
   };
 
   useEffect(() => {
@@ -130,13 +138,13 @@ export default function ProductPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative bg-gray-900">
+      <section className="relative bg-gray-900 min-h-[400px]">
         <div className="absolute inset-0">
           <Image
             src={product.image || '/images/placeholder-hero.jpg'}
             alt={product.name}
             fill
-            className="object-cover opacity-40"
+            className="object-cover opacity-60"
             priority
           />
         </div>
@@ -176,7 +184,7 @@ export default function ProductPage() {
             {/* Product Details */}
             <div className="lg:col-span-2">
               <div className="prose prose-lg max-w-none">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Product Details</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">About This Product</h2>
                 <p className="text-gray-600 mb-6">
                   {product.description}
                 </p>
