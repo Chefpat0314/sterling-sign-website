@@ -1,0 +1,49 @@
+name: Weekly Optimization Audit
+
+on:
+  schedule:
+    - cron: '0 9 * * MON'  # Every Monday at 9 AM UTC
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  run-qa:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run build validation
+        run: npm run build
+        
+      - name: Run QA validation
+        run: node scripts/qa_validate.js
+        
+      - name: Run event validation
+        run: node scripts/event_validation.js
+        
+      - name: Run analytics check
+        run: node scripts/analytics_check.js
+        
+      - name: Run SEO validation
+        run: node scripts/validate_seo_pack.js
+        
+      - name: Generate KPI report
+        run: node scripts/generate_kpi_report.js
+        
+      - name: Commit reports
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add reports/
+          git diff --staged --quiet || git commit -m "Weekly QA Report - $(date +'%Y-%m-%d')"
+          git push

@@ -1,0 +1,96 @@
+{
+  "targets": {
+    "conversion_rate": {
+      "value": 0.03,
+      "description": "Overall site conversion rate",
+      "unit": "percentage",
+      "current": 0.0,
+      "trend": "neutral"
+    },
+    "aov": {
+      "value": 200,
+      "description": "Average order value",
+      "unit": "dollars",
+      "current": 0,
+      "trend": "neutral"
+    },
+    "repeat_90": {
+      "value": 0.35,
+      "description": "90-day repeat customer rate",
+      "unit": "percentage",
+      "current": 0.0,
+      "trend": "neutral"
+    },
+    "ltv_cac": {
+      "value": 3.0,
+      "description": "Lifetime value to customer acquisition cost ratio",
+      "unit": "ratio",
+      "current": 0.0,
+      "trend": "neutral"
+    },
+    "bounce_rate": {
+      "value": 0.4,
+      "description": "Site bounce rate (lower is better)",
+      "unit": "percentage",
+      "current": 0.0,
+      "trend": "neutral"
+    },
+    "page_load_time": {
+      "value": 2.5,
+      "description": "Average page load time",
+      "unit": "seconds",
+      "current": 0.0,
+      "trend": "neutral"
+    },
+    "mobile_conversion": {
+      "value": 0.025,
+      "description": "Mobile conversion rate",
+      "unit": "percentage",
+      "current": 0.0,
+      "trend": "neutral"
+    },
+    "organic_traffic": {
+      "value": 0.6,
+      "description": "Percentage of organic traffic",
+      "unit": "percentage",
+      "current": 0.0,
+      "trend": "neutral"
+    }
+  },
+  "segments": {
+    "construction": {
+      "conversion_rate": 0.035,
+      "aov": 250,
+      "repeat_90": 0.4
+    },
+    "property_management": {
+      "conversion_rate": 0.04,
+      "aov": 300,
+      "repeat_90": 0.5
+    },
+    "retail": {
+      "conversion_rate": 0.025,
+      "aov": 150,
+      "repeat_90": 0.3
+    },
+    "healthcare": {
+      "conversion_rate": 0.045,
+      "aov": 400,
+      "repeat_90": 0.6
+    }
+  },
+  "benchmarks": {
+    "industry_average": {
+      "conversion_rate": 0.025,
+      "aov": 180,
+      "bounce_rate": 0.45
+    },
+    "top_performers": {
+      "conversion_rate": 0.05,
+      "aov": 300,
+      "bounce_rate": 0.3
+    }
+  },
+  "last_updated": "2024-01-01T00:00:00Z",
+  "next_review": "2024-01-08T00:00:00Z"
+}

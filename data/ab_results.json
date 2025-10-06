@@ -1,0 +1,141 @@
+{
+  "tests": {
+    "countdown_timer_pdp": {
+      "name": "Countdown Timer on PDP",
+      "hypothesis": "Adds urgency and increases conversion rate",
+      "metric": "PDP CVR",
+      "targetLift": 0.05,
+      "status": "active",
+      "variants": {
+        "A": {
+          "name": "Control - No Timer",
+          "description": "Standard product page without countdown timer",
+          "conversionRate": 0.0,
+          "visitors": 0,
+          "conversions": 0
+        },
+        "B": {
+          "name": "Treatment - With Timer", 
+          "description": "Product page with countdown timer to cutoff",
+          "conversionRate": 0.0,
+          "visitors": 0,
+          "conversions": 0
+        }
+      },
+      "startDate": "2024-01-01",
+      "endDate": null,
+      "confidence": 0.0
+    },
+    "trust_badge_cta": {
+      "name": "Trust Badge Near CTA",
+      "hypothesis": "Reduces abandonment and increases trust",
+      "metric": "Checkout CVR", 
+      "targetLift": 0.075,
+      "status": "active",
+      "variants": {
+        "A": {
+          "name": "Control - No Trust Badge",
+          "description": "Standard CTA without trust indicators",
+          "conversionRate": 0.0,
+          "visitors": 0,
+          "conversions": 0
+        },
+        "B": {
+          "name": "Treatment - With Trust Badge",
+          "description": "CTA with trust badges (97% on-time, secure checkout)",
+          "conversionRate": 0.0,
+          "visitors": 0,
+          "conversions": 0
+        }
+      },
+      "startDate": "2024-01-01",
+      "endDate": null,
+      "confidence": 0.0
+    },
+    "cta_copy_design": {
+      "name": "CTA Copy 'Design Now' vs 'Add to Cart'",
+      "hypothesis": "Increases configurator usage and engagement",
+      "metric": "Step CTR",
+      "targetLift": 0.03,
+      "status": "active", 
+      "variants": {
+        "A": {
+          "name": "Control - 'Add to Cart'",
+          "description": "Standard e-commerce CTA copy",
+          "conversionRate": 0.0,
+          "visitors": 0,
+          "conversions": 0
+        },
+        "B": {
+          "name": "Treatment - 'Design Now'",
+          "description": "Creative-focused CTA copy emphasizing design process",
+          "conversionRate": 0.0,
+          "visitors": 0,
+          "conversions": 0
+        }
+      },
+      "startDate": "2024-01-01",
+      "endDate": null,
+      "confidence": 0.0
+    },
+    "review_stars_product": {
+      "name": "Review Stars Near Product Name",
+      "hypothesis": "Boosts confidence and social proof",
+      "metric": "PDP CVR",
+      "targetLift": 0.04,
+      "status": "active",
+      "variants": {
+        "A": {
+          "name": "Control - No Stars",
+          "description": "Product name without review stars",
+          "conversionRate": 0.0,
+          "visitors": 0,
+          "conversions": 0
+        },
+        "B": {
+          "name": "Treatment - With Stars",
+          "description": "Product name with 4.8-star rating display",
+          "conversionRate": 0.0,
+          "visitors": 0,
+          "conversions": 0
+        }
+      },
+      "startDate": "2024-01-01", 
+      "endDate": null,
+      "confidence": 0.0
+    },
+    "mobile_sticky_cart": {
+      "name": "Mobile Sticky Add-to-Cart",
+      "hypothesis": "Improves mobile conversion rate",
+      "metric": "Mobile PDP CVR",
+      "targetLift": 0.05,
+      "status": "active",
+      "variants": {
+        "A": {
+          "name": "Control - No Sticky Bar",
+          "description": "Standard mobile product page",
+          "conversionRate": 0.0,
+          "visitors": 0,
+          "conversions": 0
+        },
+        "B": {
+          "name": "Treatment - With Sticky Bar",
+          "description": "Mobile sticky bar with product info and CTA",
+          "conversionRate": 0.0,
+          "visitors": 0,
+          "conversions": 0
+        }
+      },
+      "startDate": "2024-01-01",
+      "endDate": null,
+      "confidence": 0.0
+    }
+  },
+  "summary": {
+    "totalTests": 5,
+    "activeTests": 5,
+    "completedTests": 0,
+    "averageLift": 0.0,
+    "lastUpdated": "2024-01-01T00:00:00Z"
+  }
+}

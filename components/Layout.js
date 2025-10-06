@@ -71,6 +71,11 @@ export default function Layout({ title = 'Sterling Sign Solutions', description 
         <div className="max-w-7xl mx-auto px-4 py-6 text-sm text-gray-600">
           © {new Date().getFullYear()} Sterling Sign Solutions
         </div>
+        
+        {/* Creator Check */}
+        <section className="text-center text-xs text-gray-400 py-4">
+          <p>🕊 Creator Check: Pause, breathe, and visualize success before each release.</p>
+        </section>
       </footer>
     </>
   );

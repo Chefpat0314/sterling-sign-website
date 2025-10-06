@@ -1,0 +1,84 @@
+{
+  "test_results": {
+    "countdown_timer_pdp": {
+      "status": "active",
+      "startDate": "2024-01-01T00:00:00Z",
+      "endDate": null,
+      "variants": {
+        "A": {
+          "name": "Control - No Timer",
+          "visitors": 1250,
+          "conversions": 38,
+          "conversionRate": 0.0304,
+          "confidence": 0.0
+        },
+        "B": {
+          "name": "Treatment - With Timer",
+          "visitors": 1180,
+          "conversions": 45,
+          "conversionRate": 0.0381,
+          "confidence": 0.0
+        }
+      },
+      "winner": null,
+      "lift": 0.025,
+      "statisticalSignificance": false
+    },
+    "trust_badge_cta": {
+      "status": "active",
+      "startDate": "2024-01-01T00:00:00Z",
+      "endDate": null,
+      "variants": {
+        "A": {
+          "name": "Control - No Trust Badge",
+          "visitors": 980,
+          "conversions": 29,
+          "conversionRate": 0.0296,
+          "confidence": 0.0
+        },
+        "B": {
+          "name": "Treatment - With Trust Badge",
+          "visitors": 1020,
+          "conversions": 35,
+          "conversionRate": 0.0343,
+          "confidence": 0.0
+        }
+      },
+      "winner": null,
+      "lift": 0.016,
+      "statisticalSignificance": false
+    },
+    "cta_copy_design": {
+      "status": "active",
+      "startDate": "2024-01-01T00:00:00Z",
+      "endDate": null,
+      "variants": {
+        "A": {
+          "name": "Control - 'Add to Cart'",
+          "visitors": 1100,
+          "conversions": 33,
+          "conversionRate": 0.0300,
+          "confidence": 0.0
+        },
+        "B": {
+          "name": "Treatment - 'Design Now'",
+          "visitors": 1080,
+          "conversions": 36,
+          "conversionRate": 0.0333,
+          "confidence": 0.0
+        }
+      },
+      "winner": null,
+      "lift": 0.011,
+      "statisticalSignificance": false
+    }
+  },
+  "summary": {
+    "totalTests": 3,
+    "activeTests": 3,
+    "completedTests": 0,
+    "averageLift": 0.017,
+    "statisticalSignificance": 0,
+    "lastUpdated": "2024-01-01T00:00:00Z"
+  }
+}
