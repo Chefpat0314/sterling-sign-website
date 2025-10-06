@@ -1,0 +1,193 @@
+{
+  "utm_parameters": {
+    "sources": [
+      "google",
+      "facebook",
+      "bing",
+      "linkedin",
+      "direct",
+      "organic",
+      "referral"
+    ],
+    "mediums": [
+      "cpc",
+      "cpm",
+      "social",
+      "email",
+      "organic",
+      "referral",
+      "direct"
+    ],
+    "campaigns": [
+      "metro_rollout_2024",
+      "partner_recruitment",
+      "construction_signs",
+      "ada_compliance",
+      "logistics_signage",
+      "property_management"
+    ]
+  },
+  "copy_blocks": {
+    "headlines": {
+      "construction": [
+        "Construction Signs Delivered Fast",
+        "Job Site Signage in 24-48 Hours",
+        "Safety Signs for Construction Sites",
+        "Custom Construction Banners & Signs",
+        "Professional Job Site Signage"
+      ],
+      "property_management": [
+        "ADA Compliant Signs Fast Delivery",
+        "Property Management Signage Solutions",
+        "ADA Room Signs & Wayfinding",
+        "Building Identification Signs",
+        "Property Signage Made Easy"
+      ],
+      "logistics": [
+        "Warehouse Safety Signs Fast",
+        "Logistics Signage Solutions",
+        "Industrial Safety Labels",
+        "Warehouse Directional Signs",
+        "Distribution Center Signage"
+      ]
+    },
+    "descriptions": {
+      "construction": [
+        "Get your construction signs fast. Safety labels, job site banners, and project identification. Free online proof, 24-48 hour delivery.",
+        "Professional construction signage delivered on time. Safety compliance, custom designs, fast turnaround for your job site.",
+        "Construction site signs made to order. Safety labels, project banners, and identification signs. Free proof, fast delivery."
+      ],
+      "property_management": [
+        "ADA compliant signage for property managers. Room signs, wayfinding, building identification. Free online proof, fast delivery.",
+        "Professional property management signage. ADA compliance guaranteed, custom designs, fast turnaround for your buildings.",
+        "Property signage solutions that comply. ADA room signs, wayfinding systems, building identification. Free proof, fast delivery."
+      ],
+      "logistics": [
+        "Warehouse and logistics signage delivered fast. Safety labels, directional signs, operational identification. Free proof, 24-48 hour delivery.",
+        "Professional logistics signage solutions. Safety compliance, custom designs, fast turnaround for your warehouse operations.",
+        "Industrial signage made to order. Safety labels, directional systems, operational signs. Free proof, fast delivery."
+      ]
+    }
+  },
+  "sitelinks": {
+    "primary": [
+      {
+        "text": "Custom Banners",
+        "url": "/products/banners",
+        "description": "Professional vinyl banners for events and construction"
+      },
+      {
+        "text": "Yard Signs",
+        "url": "/products/yard-signs",
+        "description": "Real estate and yard signs delivered fast"
+      },
+      {
+        "text": "ADA Signs",
+        "url": "/products/ada-signs",
+        "description": "ADA compliant room signs with braille"
+      },
+      {
+        "text": "Get Quote",
+        "url": "/request-a-quote",
+        "description": "Free custom quote with online proof"
+      }
+    ],
+    "metro_specific": {
+      "phoenix-az": [
+        {
+          "text": "Phoenix Signs",
+          "url": "/markets/phoenix-az",
+          "description": "Custom signs delivered fast in Phoenix"
+        },
+        {
+          "text": "Construction Signs",
+          "url": "/markets/phoenix-az?persona=contractor_gc",
+          "description": "Job site signage for Phoenix contractors"
+        }
+      ],
+      "dallas-tx": [
+        {
+          "text": "Dallas Signs",
+          "url": "/markets/dallas-tx",
+          "description": "Custom signs delivered fast in Dallas"
+        },
+        {
+          "text": "Logistics Signs",
+          "url": "/markets/dallas-tx?persona=logistics",
+          "description": "Warehouse signage for Dallas logistics"
+        }
+      ]
+    }
+  },
+  "landing_page_mapping": {
+    "construction": {
+      "primary": "/markets/{metro}?persona=contractor_gc",
+      "fallback": "/products/safety-signs"
+    },
+    "property_management": {
+      "primary": "/markets/{metro}?persona=property_manager",
+      "fallback": "/products/ada-signs"
+    },
+    "logistics": {
+      "primary": "/markets/{metro}?persona=logistics",
+      "fallback": "/products/safety-signs"
+    }
+  },
+  "ad_extensions": {
+    "callout_extensions": [
+      "Free Online Proof",
+      "24-48 Hour Delivery",
+      "ADA Compliant",
+      "Licensed & Insured",
+      "Professional Installation"
+    ],
+    "structured_snippets": {
+      "services": [
+        "Custom Banners",
+        "Yard Signs",
+        "ADA Signs",
+        "Safety Labels",
+        "Window Graphics"
+      ],
+      "industries": [
+        "Construction",
+        "Property Management",
+        "Logistics",
+        "Healthcare",
+        "Education"
+      ]
+    }
+  },
+  "negative_keywords": [
+    "free",
+    "cheap",
+    "diy",
+    "template",
+    "download",
+    "software",
+    "app",
+    "online",
+    "digital",
+    "virtual"
+  ],
+  "targeting_criteria": {
+    "demographics": {
+      "age": "25-65",
+      "gender": "all",
+      "income": "middle_upper"
+    },
+    "interests": [
+      "Construction",
+      "Property Management",
+      "Logistics",
+      "Signage",
+      "Business Services"
+    ],
+    "behaviors": [
+      "Business Decision Makers",
+      "Construction Professionals",
+      "Property Managers",
+      "Logistics Coordinators"
+    ]
+  }
+}

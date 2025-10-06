@@ -1,0 +1,125 @@
+{
+  "search_campaigns": {
+    "contractor_gc": {
+      "headlines": [
+        "Construction Signs Delivered Fast",
+        "Job Site Signage in 24-48 Hours",
+        "Safety Signs for Construction Sites",
+        "Custom Construction Banners & Signs",
+        "Professional Job Site Signage"
+      ],
+      "descriptions": [
+        "Get your construction signs fast. Safety labels, job site banners, and project identification. Free online proof, 24-48 hour delivery.",
+        "Professional construction signage delivered on time. Safety compliance, custom designs, fast turnaround for your job site.",
+        "Construction site signs made to order. Safety labels, project banners, and identification signs. Free proof, fast delivery."
+      ],
+      "keywords": [
+        "construction signs",
+        "job site signage",
+        "safety signs construction",
+        "construction banners",
+        "project identification signs"
+      ]
+    },
+    "property_manager": {
+      "headlines": [
+        "ADA Compliant Signs Fast Delivery",
+        "Property Management Signage Solutions",
+        "ADA Room Signs & Wayfinding",
+        "Building Identification Signs",
+        "Property Signage Made Easy"
+      ],
+      "descriptions": [
+        "ADA compliant signage for property managers. Room signs, wayfinding, building identification. Free online proof, fast delivery.",
+        "Professional property management signage. ADA compliance guaranteed, custom designs, fast turnaround for your buildings.",
+        "Property signage solutions that comply. ADA room signs, wayfinding systems, building identification. Free proof, fast delivery."
+      ],
+      "keywords": [
+        "ADA signs",
+        "property management signage",
+        "room signs",
+        "wayfinding signs",
+        "building signs"
+      ]
+    },
+    "logistics": {
+      "headlines": [
+        "Warehouse Safety Signs Fast",
+        "Logistics Signage Solutions",
+        "Industrial Safety Labels",
+        "Warehouse Directional Signs",
+        "Distribution Center Signage"
+      ],
+      "descriptions": [
+        "Warehouse and logistics signage delivered fast. Safety labels, directional signs, operational identification. Free proof, 24-48 hour delivery.",
+        "Professional logistics signage solutions. Safety compliance, custom designs, fast turnaround for your warehouse operations.",
+        "Industrial signage made to order. Safety labels, directional systems, operational signs. Free proof, fast delivery."
+      ],
+      "keywords": [
+        "warehouse signs",
+        "logistics signage",
+        "safety labels",
+        "directional signs",
+        "industrial signs"
+      ]
+    }
+  },
+  "performance_max": {
+    "headlines": [
+      "Custom Signs Delivered Fast",
+      "Professional Signage Solutions",
+      "Signs Made to Order",
+      "Fast Sign Delivery",
+      "Custom Signs & Banners"
+    ],
+    "descriptions": [
+      "Professional custom signage delivered fast. Banners, yard signs, ADA compliance, safety labels. Free online proof, 24-48 hour delivery.",
+      "Get your custom signs fast. Professional quality, free proof, fast delivery. Banners, yard signs, ADA signs, safety labels.",
+      "Custom signage solutions delivered on time. Professional quality, free online proof, fast turnaround for your business needs."
+    ]
+  },
+  "meta_campaigns": {
+    "headlines": [
+      "Custom Signs Delivered Fast",
+      "Professional Signage Solutions",
+      "Get Your Signs Made Fast",
+      "Custom Signs & Banners",
+      "Signage Solutions Delivered"
+    ],
+    "descriptions": [
+      "Professional custom signage delivered fast. Free online proof, 24-48 hour delivery. Banners, yard signs, ADA compliance.",
+      "Get your custom signs made fast. Professional quality, free proof, fast delivery. Serving businesses nationwide.",
+      "Custom signage solutions delivered on time. Professional quality, free online proof, fast turnaround for your business."
+    ]
+  },
+  "metro_specific": {
+    "phoenix-az": {
+      "headlines": [
+        "Phoenix Signs Delivered Fast",
+        "Custom Signs in Phoenix",
+        "Phoenix Signage Solutions",
+        "Fast Signs Phoenix",
+        "Phoenix Custom Signs"
+      ],
+      "descriptions": [
+        "Professional custom signage in Phoenix. Fast delivery, free online proof. Banners, yard signs, ADA compliance, safety labels.",
+        "Get your Phoenix signs made fast. Professional quality, free proof, 24-48 hour delivery. Serving Phoenix metro area.",
+        "Phoenix signage solutions delivered on time. Professional quality, free online proof, fast turnaround for your business."
+      ]
+    },
+    "dallas-tx": {
+      "headlines": [
+        "Dallas Signs Delivered Fast",
+        "Custom Signs in Dallas",
+        "Dallas Signage Solutions",
+        "Fast Signs Dallas",
+        "Dallas Custom Signs"
+      ],
+      "descriptions": [
+        "Professional custom signage in Dallas. Fast delivery, free online proof. Banners, yard signs, ADA compliance, safety labels.",
+        "Get your Dallas signs made fast. Professional quality, free proof, 24-48 hour delivery. Serving Dallas-Fort Worth metro area.",
+        "Dallas signage solutions delivered on time. Professional quality, free online proof, fast turnaround for your business."
+      ]
+    }
+  }
+}

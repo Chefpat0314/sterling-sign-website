@@ -1,0 +1,116 @@
+{
+  "generated_at": "2024-01-01T00:00:00Z",
+  "method": "vbod_persona_density_v1",
+  "metros": [
+    {
+      "slug": "phoenix-az",
+      "name": "Phoenix, AZ",
+      "score_overall": 86,
+      "segments": {
+        "contractor_gc": 90,
+        "property_manager": 82,
+        "logistics": 78
+      },
+      "notes": "High construction pipeline; strong industrial base."
+    },
+    {
+      "slug": "dallas-tx",
+      "name": "Dallas–Fort Worth, TX",
+      "score_overall": 88,
+      "segments": {
+        "contractor_gc": 89,
+        "property_manager": 86,
+        "logistics": 88
+      },
+      "notes": "DFW logistics hub; dense multi-family."
+    },
+    {
+      "slug": "atlanta-ga",
+      "name": "Atlanta, GA",
+      "score_overall": 84,
+      "segments": {
+        "contractor_gc": 85,
+        "property_manager": 83,
+        "logistics": 84
+      },
+      "notes": "Southeast growth corridor."
+    },
+    {
+      "slug": "denver-co",
+      "name": "Denver, CO",
+      "score_overall": 79,
+      "segments": {
+        "contractor_gc": 82,
+        "property_manager": 76,
+        "logistics": 74
+      },
+      "notes": "Construction & PM density."
+    },
+    {
+      "slug": "chicago-il",
+      "name": "Chicago, IL",
+      "score_overall": 83,
+      "segments": {
+        "contractor_gc": 80,
+        "property_manager": 86,
+        "logistics": 84
+      },
+      "notes": "Industrial/logistics strength."
+    },
+    {
+      "slug": "seattle-wa",
+      "name": "Seattle, WA",
+      "score_overall": 78,
+      "segments": {
+        "contractor_gc": 77,
+        "property_manager": 79,
+        "logistics": 74
+      },
+      "notes": "Enterprise PM + tech campuses."
+    },
+    {
+      "slug": "los-angeles-ca",
+      "name": "Los Angeles, CA",
+      "score_overall": 85,
+      "segments": {
+        "contractor_gc": 84,
+        "property_manager": 88,
+        "logistics": 82
+      },
+      "notes": "Huge PM density; ports/logistics."
+    },
+    {
+      "slug": "houston-tx",
+      "name": "Houston, TX",
+      "score_overall": 82,
+      "segments": {
+        "contractor_gc": 86,
+        "property_manager": 78,
+        "logistics": 80
+      },
+      "notes": "Contractors + industrial."
+    },
+    {
+      "slug": "orlando-fl",
+      "name": "Orlando, FL",
+      "score_overall": 77,
+      "segments": {
+        "contractor_gc": 78,
+        "property_manager": 76,
+        "logistics": 73
+      },
+      "notes": "Hospitality & property turnover."
+    },
+    {
+      "slug": "fresno-ca",
+      "name": "Fresno, CA",
+      "score_overall": 72,
+      "segments": {
+        "contractor_gc": 76,
+        "property_manager": 71,
+        "logistics": 68
+      },
+      "notes": "Home base pilot; agriculture/logistics."
+    }
+  ]
+}

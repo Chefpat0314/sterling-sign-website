@@ -1,0 +1,82 @@
+{
+  "phoenix-az": {
+    "hero_title": "Phoenix Signs, Delivered Fast",
+    "hero_subtitle": "ADA, Safety, Banners & More. On-Time Delivery Promise.",
+    "featured_categories": ["banners", "yard-signs", "ada-signs", "safety-signs"],
+    "persona_modules": ["contractor_gc", "property_manager", "logistics"],
+    "local_social_proof": "Serving Phoenix metro since 2020",
+    "rfq_cta": "Get Your Phoenix Quote"
+  },
+  "dallas-tx": {
+    "hero_title": "Dallas Signs, Delivered Fast",
+    "hero_subtitle": "ADA, Safety, Banners & More. On-Time Delivery Promise.",
+    "featured_categories": ["banners", "yard-signs", "ada-signs", "safety-signs"],
+    "persona_modules": ["contractor_gc", "property_manager", "logistics"],
+    "local_social_proof": "Serving Dallas-Fort Worth since 2020",
+    "rfq_cta": "Get Your Dallas Quote"
+  },
+  "atlanta-ga": {
+    "hero_title": "Atlanta Signs, Delivered Fast",
+    "hero_subtitle": "ADA, Safety, Banners & More. On-Time Delivery Promise.",
+    "featured_categories": ["banners", "yard-signs", "ada-signs", "safety-signs"],
+    "persona_modules": ["contractor_gc", "property_manager", "logistics"],
+    "local_social_proof": "Serving Atlanta metro since 2020",
+    "rfq_cta": "Get Your Atlanta Quote"
+  },
+  "denver-co": {
+    "hero_title": "Denver Signs, Delivered Fast",
+    "hero_subtitle": "ADA, Safety, Banners & More. On-Time Delivery Promise.",
+    "featured_categories": ["banners", "yard-signs", "ada-signs", "safety-signs"],
+    "persona_modules": ["contractor_gc", "property_manager", "logistics"],
+    "local_social_proof": "Serving Denver metro since 2020",
+    "rfq_cta": "Get Your Denver Quote"
+  },
+  "chicago-il": {
+    "hero_title": "Chicago Signs, Delivered Fast",
+    "hero_subtitle": "ADA, Safety, Banners & More. On-Time Delivery Promise.",
+    "featured_categories": ["banners", "yard-signs", "ada-signs", "safety-signs"],
+    "persona_modules": ["contractor_gc", "property_manager", "logistics"],
+    "local_social_proof": "Serving Chicago metro since 2020",
+    "rfq_cta": "Get Your Chicago Quote"
+  },
+  "seattle-wa": {
+    "hero_title": "Seattle Signs, Delivered Fast",
+    "hero_subtitle": "ADA, Safety, Banners & More. On-Time Delivery Promise.",
+    "featured_categories": ["banners", "yard-signs", "ada-signs", "safety-signs"],
+    "persona_modules": ["contractor_gc", "property_manager", "logistics"],
+    "local_social_proof": "Serving Seattle metro since 2020",
+    "rfq_cta": "Get Your Seattle Quote"
+  },
+  "los-angeles-ca": {
+    "hero_title": "Los Angeles Signs, Delivered Fast",
+    "hero_subtitle": "ADA, Safety, Banners & More. On-Time Delivery Promise.",
+    "featured_categories": ["banners", "yard-signs", "ada-signs", "safety-signs"],
+    "persona_modules": ["contractor_gc", "property_manager", "logistics"],
+    "local_social_proof": "Serving Los Angeles metro since 2020",
+    "rfq_cta": "Get Your LA Quote"
+  },
+  "houston-tx": {
+    "hero_title": "Houston Signs, Delivered Fast",
+    "hero_subtitle": "ADA, Safety, Banners & More. On-Time Delivery Promise.",
+    "featured_categories": ["banners", "yard-signs", "ada-signs", "safety-signs"],
+    "persona_modules": ["contractor_gc", "property_manager", "logistics"],
+    "local_social_proof": "Serving Houston metro since 2020",
+    "rfq_cta": "Get Your Houston Quote"
+  },
+  "orlando-fl": {
+    "hero_title": "Orlando Signs, Delivered Fast",
+    "hero_subtitle": "ADA, Safety, Banners & More. On-Time Delivery Promise.",
+    "featured_categories": ["banners", "yard-signs", "ada-signs", "safety-signs"],
+    "persona_modules": ["contractor_gc", "property_manager", "logistics"],
+    "local_social_proof": "Serving Orlando metro since 2020",
+    "rfq_cta": "Get Your Orlando Quote"
+  },
+  "fresno-ca": {
+    "hero_title": "Fresno Signs, Delivered Fast",
+    "hero_subtitle": "ADA, Safety, Banners & More. On-Time Delivery Promise.",
+    "featured_categories": ["banners", "yard-signs", "ada-signs", "safety-signs"],
+    "persona_modules": ["contractor_gc", "property_manager", "logistics"],
+    "local_social_proof": "Serving Fresno metro since 2020",
+    "rfq_cta": "Get Your Fresno Quote"
+  }
+}
