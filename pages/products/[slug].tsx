@@ -147,6 +147,9 @@ export default function ProductPage() {
               <Link
                 href={`/request-a-quote?product=${slug}`}
                 className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg"
+                onClick={() => {
+                  console.log('Navigating to:', `/request-a-quote?product=${slug}`);
+                }}
               >
                 Get Quote
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -226,6 +229,9 @@ export default function ProductPage() {
                 <Link
                   href={`/request-a-quote?product=${slug}`}
                   className="block w-full text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors mb-4"
+                  onClick={() => {
+                    console.log('Sidebar - Navigating to:', `/request-a-quote?product=${slug}`);
+                  }}
                 >
                   Get Custom Quote
                 </Link>
