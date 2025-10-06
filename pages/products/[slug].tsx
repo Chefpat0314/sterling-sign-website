@@ -13,6 +13,11 @@ export default function ProductPage() {
   const [product, setProduct] = useState<CatalogItem | null>(null);
   const [loading, setLoading] = useState(true);
 
+  const handleGetQuote = () => {
+    console.log('Get Quote clicked, navigating to:', `/request-a-quote?product=${slug}`);
+    router.push(`/request-a-quote?product=${slug}`);
+  };
+
   useEffect(() => {
     if (!slug || typeof slug !== 'string') return;
 
@@ -144,18 +149,15 @@ export default function ProductPage() {
               {product.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href={`/request-a-quote?product=${slug}`}
+              <button
+                onClick={handleGetQuote}
                 className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg"
-                onClick={() => {
-                  console.log('Navigating to:', `/request-a-quote?product=${slug}`);
-                }}
               >
                 Get Quote
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </Link>
+              </button>
               <Link
                 href="#specifications"
                 className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors"
@@ -226,15 +228,12 @@ export default function ProductPage() {
                 <p className="text-gray-600 mb-6">
                   Get a custom quote for your {product.name.toLowerCase()} today.
                 </p>
-                <Link
-                  href={`/request-a-quote?product=${slug}`}
+                <button
+                  onClick={handleGetQuote}
                   className="block w-full text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors mb-4"
-                  onClick={() => {
-                    console.log('Sidebar - Navigating to:', `/request-a-quote?product=${slug}`);
-                  }}
                 >
                   Get Custom Quote
-                </Link>
+                </button>
                 <div className="text-sm text-gray-500 text-center">
                   <p>✓ Free quotes</p>
                   <p>✓ 24-48 hour turnaround</p>
