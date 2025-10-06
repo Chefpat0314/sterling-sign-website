@@ -74,6 +74,14 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
           </ul>
         </div>
 
+        {/* Trust Line */}
+        <div className="mb-4 text-xs text-gray-500 text-center">
+          <span className="flex items-center justify-center">
+            <span className="text-green-500 mr-1">✓</span>
+            Free online proof • Fast turnaround
+          </span>
+        </div>
+
         {/* CTAs */}
         <div className="space-y-2">
           <Link

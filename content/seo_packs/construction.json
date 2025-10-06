@@ -1,0 +1,34 @@
+{
+  "slug": "/industries/construction",
+  "page_type": "industry",
+  "title_tag": "Construction Site Signs | Safety & Branding Solutions",
+  "meta_description": "Professional construction signage for job sites. Safety signs, project banners, and branding solutions with fast turnaround and reliable delivery.",
+  "h1": "Construction Site Signs That Work",
+  "intro_paragraph": "Sterling's construction signage keeps your job site safe, branded, and compliant—durable materials that withstand weather and traffic, clear messaging for workers and visitors, and fast delivery to keep projects on schedule.",
+  "feature_bullets": [
+    "Weather-resistant materials for job sites",
+    "Safety compliance and OSHA standards",
+    "Fast turnaround for project deadlines",
+    "Professional installation available"
+  ],
+  "cta_blurb": "Get your construction signs delivered fast with free online proof.",
+  "schema": { 
+    "type": "Service", 
+    "brand": "Sterling Sign Solutions",
+    "category": "Construction"
+  },
+  "internal_links": [
+    "/products/safety-labels",
+    "/products/banners-13oz",
+    "/products/floor-graphics",
+    "/request-a-quote?industry=construction"
+  ],
+  "target_keywords": [
+    "construction signs",
+    "job site signs",
+    "safety signs",
+    "construction banners",
+    "project signage"
+  ],
+  "audience_segment": "Contractor"
+}

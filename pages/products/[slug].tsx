@@ -6,6 +6,10 @@ import Image from 'next/image';
 import { getCatalogBySlug, CatalogItem } from '../../lib/catalog';
 import { analytics } from '../../lib/metrics';
 import Layout from '../../components/Layout';
+import DeliveryDateBadge from '../../components/shipping/DeliveryDateBadge';
+import CutoffCountdown from '../../components/shipping/CutoffCountdown';
+import StickyMobileBar from '../../components/cro/StickyMobileBar';
+import StarsInline from '../../components/reviews/StarsInline';
 
 export default function ProductPage() {
   const router = useRouter();
@@ -146,12 +150,48 @@ export default function ProductPage() {
         </div>
         <div className="relative max-w-6xl mx-auto px-4 py-24 text-white">
           <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
               {product.name}
             </h1>
+            
+            {/* Ratings */}
+            <div className="mb-4">
+              <StarsInline rating={4.8} reviewCount={85} size="lg" />
+            </div>
             <p className="text-xl mb-8 text-gray-200">
               {product.description}
             </p>
+            
+            {/* Trust Strip */}
+            <div className="mb-6 flex items-center text-sm text-gray-300">
+              <span className="flex items-center mr-6">
+                <span className="text-green-400 mr-1">✓</span>
+                97% on-time
+              </span>
+              <span className="flex items-center mr-6">
+                <span className="text-green-400 mr-1">✓</span>
+                0.5% damage-rate
+              </span>
+              <span className="flex items-center">
+                <span className="text-green-400 mr-1">✓</span>
+                Free online proof
+              </span>
+            </div>
+
+            {/* Shipping Widgets */}
+            <div className="mb-6 space-y-3">
+              <CutoffCountdown productId={product.id} />
+              <DeliveryDateBadge 
+                product={product.id}
+                qty={1}
+                areaSqft={10}
+                width={24}
+                height={18}
+                destZip=""
+                rushLevel="none"
+              />
+            </div>
+
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={handleGetQuote}
@@ -265,6 +305,13 @@ export default function ProductPage() {
           </div>
         </div>
       </section>
+
+      {/* Mobile Sticky Bar */}
+      <StickyMobileBar 
+        productName={product.name}
+        productSlug={product.slug}
+        startingPrice={product.startingPrice}
+      />
     </>
   );
 }

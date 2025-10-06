@@ -1,0 +1,7 @@
+route,primary_keywords,secondary_keywords,audience_segment
+/products,"custom signs,vinyl banners,aluminum signs","signage solutions,construction signs",Business Owner
+/products/banners,"vinyl banners,custom banners,event banners","construction banners,promotional banners",Event Manager
+/products/yard-signs,"yard signs,real estate signs,coroplast signs","aluminum signs,construction signs",Real Estate Agent
+/products/ada-signs,"ADA signs,braille signs,tactile signs","accessibility signs,room signs",Property Manager
+/industries/construction,"construction signs,job site signs,safety signs","construction banners,project signage",Contractor
+/industries/property-management,"property management signs,ADA compliant signs","wayfinding signs,building signs",Property Manager

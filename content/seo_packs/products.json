@@ -1,0 +1,37 @@
+{
+  "slug": "/products",
+  "page_type": "category",
+  "title_tag": "Custom Signs & Banners | Sterling Sign Solutions",
+  "meta_description": "Professional custom signage solutions. Vinyl banners, aluminum signs, ADA compliance, and more. Fast turnaround, free online proof, reliable delivery.",
+  "h1": "Custom Signs & Banners Built to Last",
+  "intro_paragraph": "Sterling crafts professional signage trusted by contractors, property managers, and businesses nationwide—precision printed, weather-tough, and delivered on your timeline.",
+  "feature_bullets": [
+    "97% on-time delivery guarantee",
+    "Free online proof before printing",
+    "24-48 hour standard turnaround",
+    "Professional installation available"
+  ],
+  "cta_blurb": "Design your custom sign or request a quick quote now.",
+  "schema": { 
+    "type": "CollectionPage", 
+    "brand": "Sterling Sign Solutions",
+    "mainEntity": {
+      "type": "ItemList",
+      "name": "Custom Signs & Banners"
+    }
+  },
+  "internal_links": [
+    "/products/banners",
+    "/products/yard-signs", 
+    "/products/ada-signs",
+    "/request-a-quote"
+  ],
+  "target_keywords": [
+    "custom signs",
+    "vinyl banners", 
+    "aluminum signs",
+    "signage solutions",
+    "construction signs"
+  ],
+  "audience_segment": "Business Owner"
+}

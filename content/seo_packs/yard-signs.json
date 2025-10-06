@@ -1,0 +1,34 @@
+{
+  "slug": "/products/yard-signs",
+  "page_type": "category",
+  "title_tag": "Yard Signs & Real Estate Signs | Custom Coroplast & Aluminum",
+  "meta_description": "Durable yard signs for real estate, construction, and events. Coroplast and aluminum options with weather-resistant printing and professional installation.",
+  "h1": "Professional Yard Signs That Last",
+  "intro_paragraph": "Sterling's yard signs combine durability with clear messaging—lightweight coroplast for temporary use, heavy-duty aluminum for permanent installations, all with weather-resistant printing that stands up to the elements.",
+  "feature_bullets": [
+    "Lightweight coroplast for easy installation",
+    "Heavy-duty aluminum for permanent use",
+    "Weather-resistant printing",
+    "Professional installation available"
+  ],
+  "cta_blurb": "Order your yard signs with free online proof and fast delivery.",
+  "schema": { 
+    "type": "Product", 
+    "brand": "Sterling Sign Solutions",
+    "category": "Yard Signs"
+  },
+  "internal_links": [
+    "/products/coroplast-4mm",
+    "/products/coroplast-6mm",
+    "/products/aluminum-040",
+    "/request-a-quote?product=yard-signs"
+  ],
+  "target_keywords": [
+    "yard signs",
+    "real estate signs",
+    "coroplast signs",
+    "aluminum signs",
+    "construction signs"
+  ],
+  "audience_segment": "Real Estate Agent"
+}

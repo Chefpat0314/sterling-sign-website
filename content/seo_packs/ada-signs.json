@@ -1,0 +1,33 @@
+{
+  "slug": "/products/ada-signs",
+  "page_type": "category",
+  "title_tag": "ADA Compliant Signs | Braille & Tactile Room Signs",
+  "meta_description": "ADA-compliant room signs with braille and tactile elements. Professional mounting, code compliance, and accessibility standards for commercial buildings.",
+  "h1": "ADA Compliant Signs for Accessibility",
+  "intro_paragraph": "Sterling's ADA-compliant signs ensure your building meets accessibility standards with raised braille, tactile elements, and professional mounting that serves all visitors with dignity and clarity.",
+  "feature_bullets": [
+    "ADA compliant with raised braille",
+    "Tactile elements for accessibility",
+    "Professional mounting included",
+    "Code compliance guaranteed"
+  ],
+  "cta_blurb": "Ensure compliance with professional ADA signs and free consultation.",
+  "schema": { 
+    "type": "Product", 
+    "brand": "Sterling Sign Solutions",
+    "category": "ADA Signs"
+  },
+  "internal_links": [
+    "/products/ada-room-signs",
+    "/services/ada-compliance",
+    "/request-a-quote?product=ada-signs"
+  ],
+  "target_keywords": [
+    "ADA signs",
+    "braille signs",
+    "tactile signs",
+    "accessibility signs",
+    "room signs"
+  ],
+  "audience_segment": "Property Manager"
+}

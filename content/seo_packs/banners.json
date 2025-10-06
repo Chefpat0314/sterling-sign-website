@@ -1,0 +1,33 @@
+{
+  "slug": "/products/banners",
+  "page_type": "category",
+  "title_tag": "Custom Vinyl Banners | Fast Printing & Delivery",
+  "meta_description": "Professional vinyl banners for events, construction, and promotions. Weather-resistant material, grommets included, fast 24-48 hour turnaround.",
+  "h1": "Custom Vinyl Banners for Every Event",
+  "intro_paragraph": "Sterling's vinyl banners deliver your message with impact—weather-resistant material, precision printing, and reinforced hems for lasting performance at construction sites, events, and promotional displays.",
+  "feature_bullets": [
+    "Weather-resistant 13oz vinyl",
+    "Grommets included for easy hanging",
+    "Full color printing with UV-resistant inks",
+    "Fast 24-48 hour turnaround"
+  ],
+  "cta_blurb": "Design your banner or get an instant quote with free online proof.",
+  "schema": { 
+    "type": "Product", 
+    "brand": "Sterling Sign Solutions",
+    "category": "Banners"
+  },
+  "internal_links": [
+    "/products/banners-13oz",
+    "/products/banners-18oz",
+    "/request-a-quote?product=banners"
+  ],
+  "target_keywords": [
+    "vinyl banners",
+    "custom banners",
+    "event banners",
+    "construction banners",
+    "promotional banners"
+  ],
+  "audience_segment": "Event Manager"
+}

@@ -1,0 +1,34 @@
+{
+  "slug": "/industries/property-management",
+  "page_type": "industry",
+  "title_tag": "Property Management Signs | ADA Compliant & Professional",
+  "meta_description": "Professional signage for property managers. ADA compliant room signs, wayfinding, and building identification with compliance guarantee and fast installation.",
+  "h1": "Property Management Signs That Comply",
+  "intro_paragraph": "Sterling's property management signage ensures compliance, clarity, and professional appearance—ADA-compliant room signs, clear wayfinding, and building identification that serves residents and visitors with dignity.",
+  "feature_bullets": [
+    "ADA compliant with braille and tactile elements",
+    "Professional wayfinding solutions",
+    "Building identification and branding",
+    "Compliance guarantee and fast installation"
+  ],
+  "cta_blurb": "Ensure compliance with professional property management signs.",
+  "schema": { 
+    "type": "Service", 
+    "brand": "Sterling Sign Solutions",
+    "category": "Property Management"
+  },
+  "internal_links": [
+    "/products/ada-room-signs",
+    "/products/wayfinding-signs",
+    "/products/building-signs",
+    "/request-a-quote?industry=property-management"
+  ],
+  "target_keywords": [
+    "property management signs",
+    "ADA compliant signs",
+    "wayfinding signs",
+    "building signs",
+    "apartment signs"
+  ],
+  "audience_segment": "Property Manager"
+}
